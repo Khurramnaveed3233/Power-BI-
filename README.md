@@ -125,6 +125,22 @@ Better hota pehle test group se feedback lete.
 - **When to Use:**  
   Jab categories limited ho (3–6) aur proportion highlight karna ho.**
 
+**Pie Chart kab use karna chahiye Power BI mein?**
+
+<img width="520" height="332" alt="pie" src="https://github.com/user-attachments/assets/b84da919-fb32-43a7-a2ac-2a79a1a7ae9d" />
+
+Pie chart tab use karna chahiye jab aapko apne data ke mukhtalif hisson ka total ke muqablay mein hisa dikhana ho. Yeh chart percentages ya proportions ko visualize karne ke liye best hota hai.
+
+Misal ke taur par, agar aap sales data mein alag-alag products ki sales ka hisa dekhna chahte hain, to pie chart use karke har product ka sales total mein kitna percent hai, asani se samajh sakte hain.
+
+**Donut Chart kab use karna chahiye Power BI mein?**
+
+![donut-chart-main-1](https://github.com/user-attachments/assets/b4f8c4ba-5b97-4009-8fd2-8c684e7d8d7d)
+
+Donut chart pie chart ki tarah hota hai, lekin ismein center khali hota hai jo thoda modern aur clean nazar aata hai. Donut chart tab use karna chahiye jab aapko apne data ke parts ka total mein hissa dikhana ho, magar aap thoda zyada visual appeal aur behtareen labeling chahte hon.
+
+Misal ke taur par, agar aapko apni company ke department-wise kharch ka breakdown dikhana ho, to donut chart se aap asani se har department ke kharch ka hisa total budget mein samajh sakte hain.
+
 ## 4. **Area Chart**
 
 <img width="635" height="468" alt="power-bi-chart-example" src="https://github.com/user-attachments/assets/42e40a6b-de19-460b-aad9-f30a03f7b6d9" />
