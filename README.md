@@ -112,7 +112,9 @@ Better hota pehle test group se feedback lete.
 
 ---
 
-## 3. ** Pie Chart / Donut Chart **
+## 3. **Pie Chart / Donut Chart**
+
+<img width="486" height="166" alt="y0gaux3g-Screenshot1-Bar-and-Column" src="https://github.com/user-attachments/assets/e9693e99-64fa-41f3-ad5e-573bb0c62110" />
 
 - **Purpose:**  
   Total ka percentage share dikhana.
@@ -121,11 +123,7 @@ Better hota pehle test group se feedback lete.
   Market share by company, budget allocation percentage.
   
 - **When to Use:**  
-  Jab categories limited ho (3–6) aur proportion highlight karna ho.
-
----
-
-## 4. **Area Chart**
+  Jab categories limited ho (3–6) aur proportion highlight karna ho.**
 
 - **Purpose:**  
   Line chart + area fill for emphasis.
