@@ -286,7 +286,7 @@ Misal ke taur par, agar aapko customer ka naam, unka phone number, aur unki tota
 
 **Matrix kab use karna chahiye Power BI mein?**
 
-<img width="1160" height="736" alt="Highlighting-the-minimum-and-maximum-values-in-a-Power-BI-matrix-03" src="https://github.com/user-attachments/assets/337e704b-f4fe-4c12-92ac-fb219636e7b2" />
+<img width="482" height="301" alt="ColumnWidthPicture1" src="https://github.com/user-attachments/assets/36a22c13-72d7-4dd7-8e2d-e8fe7e09dd55" />
 
 Matrix visual tab use karna chahiye jab aapko apne data ko rows aur columns dono mein categories ke hisaab se group karke summarize karna ho. Yeh table se zyada flexible hota hai kyun ke aap rows ya columns ko expand ya collapse kar sakte hain (drill down/drill up), jis se detailed ya summarized view milti hai.
 
