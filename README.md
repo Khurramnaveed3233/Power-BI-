@@ -292,6 +292,46 @@ Matrix visual tab use karna chahiye jab aapko apne data ko rows aur columns dono
 
 Misal ke taur par, agar aapko sales data ko region ke mutabiq aur uske andar product category ke mutabiq dikhana ho, to matrix visual bohat faida mand hota hai.
 
+### Table aur Matrix mein Farq
+
+- **Table Visual:**  
+  Table ek simple grid hota hai jisme rows aur columns mein data dikhaya jata hai. Har row ek record ko represent karta hai aur har column ek field. Table mein grouping ya summarization nahi hoti; bas raw data dikhaya jata hai.
+
+- **Matrix Visual:**  
+  Matrix table ki tarah hota hai lekin zyada flexible aur powerful hota hai. Isme aap rows aur columns dono ko categories ke hisaab se group kar sakte hain, aur data ko summarize bhi kar sakte hain. Matrix mein aap rows ya columns ko expand ya collapse (drill down/up) bhi kar sakte hain, jis se detailed ya summarized view milti hai.
+
+---
+
+### Kab kaun sa use karna chahiye?
+
+- **Table use karein:**  
+  Jab aapko apna data seedha aur simple format mein, bina grouping ke, row-wise detail chahiye ho. Jaise customer list, transactions, ya kisi bhi data ka raw form.
+
+- **Matrix use karein:**  
+  Jab aapko data ko summarize karna ho, multiple dimensions mein grouping karni ho, ya drill down/up ki zarurat ho. Jaise sales ko region aur product category ke mutabiq dikhana.
+
+---
+
+### Example:
+
+- Table:  
+  Customer Name | Phone Number | Total Purchase  
+  ---|---|---  
+  Ali | 1234567890 | 5000  
+  Sara | 0987654321 | 7000  
+
+- Matrix:  
+  | Region | Product Category | Total Sales |  
+  |--------|------------------|-------------|  
+  | Punjab | Electronics      | 100000      |  
+  | Punjab | Furniture        | 50000       |  
+  | Sindh  | Electronics      | 80000       |  
+
+---
+
+**Summary:**  
+Table zyada raw aur simple data dikhata hai, jabke matrix grouping aur summarization ke sath zyada analytical view deta hai.
+
 ## 11. **Gauge**
 
 - **Purpose:**  
