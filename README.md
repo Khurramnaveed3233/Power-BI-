@@ -84,6 +84,8 @@ Better hota pehle test group se feedback lete.
 
 ## 1. **Bar Chart / Column Chart**
 
+<img width="486" height="166" alt="y0gaux3g-Screenshot1-Bar-and-Column" src="https://github.com/user-attachments/assets/3adeeac8-e1dc-4723-aef4-2572249e5af1" />
+
 - **Purpose:**  
   Categories ke beech comparison dikhane ke liye.
   
