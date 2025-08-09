@@ -80,3 +80,206 @@ Better hota pehle test group se feedback lete.
 -  Data sahi ho  
 -  Test run karo  
 
+# Power BI Visuals – Purpose, Real-World Examples & When to Use
+
+## 1. **Bar Chart / Column Chart**
+
+- **Purpose:**  
+  Categories ke beech comparison dikhane ke liye.
+  
+- **Real-World Example:**  
+  Sales by product category, number of students per department.
+  
+- **When to Use:**  
+  Jab aapko discrete categories ka comparison chahiye, e.g., "Which product sold most?"
+
+---
+
+## 2. **Line Chart**
+
+- **Purpose:**  
+  Time ke saath trend dikhane ke liye.
+  
+- **Real-World Example:**  
+  Monthly revenue growth, website traffic over weeks.
+  
+- **When to Use:**  
+  Jab aapko data ka trend dekhna ho, jaise increasing ya decreasing pattern.
+
+---
+
+## 3. **Pie Chart / Donut Chart**
+
+- **Purpose:**  
+  Total ka percentage share dikhana.
+  
+- **Real-World Example:**  
+  Market share by company, budget allocation percentage.
+  
+- **When to Use:**  
+  Jab categories limited ho (3–6) aur proportion highlight karna ho.
+
+---
+
+## 4. **Area Chart**
+
+- **Purpose:**  
+  Line chart + area fill for emphasis.
+  
+- **Real-World Example:**  
+  Cumulative sales growth, rainfall trends over years.
+  
+- **When to Use:**  
+  Jab aapko trend ke saath total volume ka emphasis dena ho.
+
+---
+
+## 5. **Stacked Bar / Column Chart**
+
+- **Purpose:**  
+  Categories ke andar sub-categories ka breakdown dikhana.
+  
+- **Real-World Example:**  
+  Sales by region broken into product lines.
+  
+- **When to Use:**  
+  Jab ek hi axis pe total aur breakdown dono chahiye.
+
+---
+
+## 6. **Clustered Bar / Column Chart**
+
+- **Purpose:**  
+  Multiple categories side-by-side compare karna.
+  
+- **Real-World Example:**  
+  Year-wise sales comparison for two different products.
+  
+- **When to Use:**  
+  Jab sub-groups ka direct comparison karna ho.
+
+---
+
+## 7. **Scatter Plot**
+
+- **Purpose:**  
+  Do variables ke beech relationship dikhana.
+  
+- **Real-World Example:**  
+  Advertising spend vs sales, temperature vs ice cream sales.
+  
+- **When to Use:**  
+  Jab correlation ya trend between two metrics check karna ho.
+
+---
+
+## 8. **Map Visuals**
+
+- **Purpose:**  
+  Geographic data visualize karna.
+  
+- **Real-World Example:**  
+  Sales by country, crime incidents by city.
+  
+- **When to Use:**  
+  Jab data me location dimension ho (city, country, coordinates).
+
+---
+
+## 9. **Table**
+- **Purpose:**  
+  Detailed raw data dikhane ke liye.
+- **Real-World Example:**  
+  Invoice list, order details.
+- **When to Use:**  
+  Jab detailed record-level data chahiye.
+
+---
+
+## 10. **Matrix**
+
+- **Purpose:**  
+  Table + pivot style summarization.
+  
+- **Real-World Example:**  
+  Sales by product and by region in cross-tab format.
+
+- **When to Use:**  
+  Jab row aur column grouping chahiye.
+
+---
+
+## 11. **Gauge**
+
+- **Purpose:**  
+  Target vs actual performance dikhana.
+  
+- **Real-World Example:**  
+  KPI achievement %, sales target completion.
+  
+- **When to Use:**  
+  Jab ek single value ka target ke against status highlight karna ho.
+
+---
+
+## 12. **Card**
+
+- **Purpose:**  
+  Single numeric KPI highlight karna.
+  
+- **Real-World Example:**  
+  Total sales, total profit, number of customers.
+  
+- **When to Use:**  
+  Jab ek important metric ko prominent dikhana ho.
+
+---
+
+## 13. **KPI Visual**
+
+- **Purpose:**  
+  Target vs actual with trend indicator.
+  
+- **Real-World Example:**  
+  Monthly sales with target and arrow showing growth.
+  
+- **When to Use:**  
+  Jab progress + trend dono ek sath dikhane ho.
+
+---
+
+## 14. **Funnel Chart**
+
+- **Purpose:**  
+  Sequential process me drop-off dikhana.
+  
+- **Real-World Example:**  
+  Sales pipeline stages, website conversion steps.
+  
+- **When to Use:**  
+  Jab step-by-step process me conversion rate samajhna ho.
+
+---
+
+## 15. **Treemap**
+- **Purpose:**  
+  Hierarchical data ko proportion ke sath dikhana.
+  
+- **Real-World Example:**  
+  Product category share in sales, expense breakdown.
+  
+- **When to Use:**  
+  Jab hierarchy + proportion ek sath show karna ho.
+
+---
+
+## Visual Selection Tips:
+
+- **Trend chahiye →** Line Chart / Area Chart
+- **Comparison chahiye →** Bar / Column Chart
+- **Proportion chahiye →** Pie / Donut / Treemap
+- **Relationship check karna ho →** Scatter Plot
+- **Geographic data →** Map Visuals
+- **Detail view →** Table / Matrix
+- **Target tracking →** Gauge / KPI / Card
+- **Process flow →** Funnel Chart
