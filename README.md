@@ -182,6 +182,22 @@ Basic area charts behtareen hotay hain:
 - **When to Use:**  
   Jab ek hi axis pe total aur breakdown dono chahiye.
 
+**Stacked Bar Chart kab use karna chahiye Power BI mein?**
+
+<img width="511" height="293" alt="stacked-bar-example-1" src="https://github.com/user-attachments/assets/02137c40-3505-4081-9836-4da258fdc1b9" />
+
+Stacked Bar Chart tab use karna chahiye jab aapko mukhtalif categories ke andar sub-categories ke data ko ek saath compare karna ho. Yeh chart categories ke andar har hisay (part) ko alag rang se dikhata hai, taake aap total ke saath-saath har hisay ka contribution bhi dekh saken.
+
+Misal ke taur par, agar aapko alag-alag sales regions mein different products ki sales ka muqabala karna ho, to stacked bar chart se aap asani se har region mein har product ki sales aur total sales dono ko visualize kar sakte hain.
+
+**Column Chart kab use karna chahiye Power BI mein?**
+
+![column-chart-1-simple-column](https://github.com/user-attachments/assets/e97e05ab-7f41-450f-bd20-d23a3c3eacf6)
+
+Column chart tab use karna chahiye jab aapko alag-alag categories ke darmiyan quantitative values ka muqabala karna ho. Yeh chart vertical bars ke zariye har category ki value ko dikhata hai, jo comparison ko bohat asaan banata hai.
+
+Misal ke taur par, agar aapko alag-alag shahron ki monthly sales dikhani ho, to column chart use karke aap asani se har shehar ki sales ko compare kar sakte hain.
+
 ## 6. **Clustered Bar / Column Chart**
 
 - **Purpose:**  
@@ -193,7 +209,13 @@ Basic area charts behtareen hotay hain:
 - **When to Use:**  
   Jab sub-groups ka direct comparison karna ho.
 
----
+**Clustered Bar Chart kab use karna chahiye Power BI mein?**
+
+![Clustered-Bar-Chart](https://github.com/user-attachments/assets/e6d0e757-739a-4a4e-838c-938ea027e551)
+
+Clustered Bar Chart tab use karna chahiye jab aapko multiple categories ke andar sub-categories ko side-by-side compare karna ho. Yeh chart horizontal bars use karta hai, aur har category ke andar sub-categories ke bars ek saath clustered (grouped) hote hain taake asani se comparison ho sake.
+
+Misal ke taur par, agar aapko alag-alag sales regions mein mukhtalif products ki sales ko compare karna ho, to clustered bar chart se aap asani se har region mein har product ki sales ko ek nazar mein dekh sakte hain.
 
 ## 7. **Scatter Plot**
 
@@ -206,7 +228,14 @@ Basic area charts behtareen hotay hain:
 - **When to Use:**  
   Jab correlation ya trend between two metrics check karna ho.
 
----
+**Scatter Plot kab use karna chahiye Power BI mein?**
+
+<img width="660" height="409" alt="HowToCreateAScatterChart6-660x409" src="https://github.com/user-attachments/assets/ff26a1b9-c9e9-43c6-aa98-2f2cd1ba0f78" />
+
+Scatter plot tab use karna chahiye jab aap do numerical variables ke darmiyan relationship ya correlation dekhna chahte hon. Yeh chart data points ko x aur y axis par plot karta hai, jisse aap patterns, trends, ya clusters asani se identify kar sakte hain.
+
+Misal ke taur par, agar aapko sales aur advertising kharch ke darmiyan rishta dekhna ho, to scatter plot se aap samajh sakte hain ke zyada advertising kharch karne se sales barhti hain ya nahi.
+
 
 ## 8. **Map Visuals**
 
@@ -219,17 +248,30 @@ Basic area charts behtareen hotay hain:
 - **When to Use:**  
   Jab data me location dimension ho (city, country, coordinates).
 
----
+**Map Visuals kab use karna chahiye Power BI mein?**
+
+<img width="720" height="380" alt="8-4-720x380" src="https://github.com/user-attachments/assets/60aab4d6-1a58-4149-a0b7-785b392e9ea6" />
+
+Map visuals tab use karna chahiye jab aapko geographic data ko visualize karna ho, jaise ke locations, regions, ya countries ke hisaab se data ko dikhana ho. Yeh visuals location-based insights aur patterns samajhnay mein madad karte hain.
+
+Misal ke taur par, agar aapko alag-alag shahron ya countries mein sales data dikhana ho, to map visual use karke aap asani se dekh sakte hain ke kahan zyada sales ho rahi hain aur kahan kam.
 
 ## 9. **Table**
+
 - **Purpose:**  
   Detailed raw data dikhane ke liye.
+  
 - **Real-World Example:**  
   Invoice list, order details.
+  
 - **When to Use:**  
   Jab detailed record-level data chahiye.
 
----
+  **Table kab use karna chahiye Power BI mein?**
+
+Table visual tab use karna chahiye jab aapko apne data ko rows aur columns mein detail ke sath dikhana ho. Yeh sabse seedha aur asaan tariqa hai jisme aap multiple fields ko organize karke clear aur structured format mein report bana sakte hain.
+
+Misal ke taur par, agar aapko customer ka naam, unka phone number, aur unki total purchase value ek sath dikhani ho, to table visual bohat useful hota hai.
 
 ## 10. **Matrix**
 
@@ -242,7 +284,13 @@ Basic area charts behtareen hotay hain:
 - **When to Use:**  
   Jab row aur column grouping chahiye.
 
----
+**Matrix kab use karna chahiye Power BI mein?**
+
+<img width="1160" height="736" alt="Highlighting-the-minimum-and-maximum-values-in-a-Power-BI-matrix-03" src="https://github.com/user-attachments/assets/337e704b-f4fe-4c12-92ac-fb219636e7b2" />
+
+Matrix visual tab use karna chahiye jab aapko apne data ko rows aur columns dono mein categories ke hisaab se group karke summarize karna ho. Yeh table se zyada flexible hota hai kyun ke aap rows ya columns ko expand ya collapse kar sakte hain (drill down/drill up), jis se detailed ya summarized view milti hai.
+
+Misal ke taur par, agar aapko sales data ko region ke mutabiq aur uske andar product category ke mutabiq dikhana ho, to matrix visual bohat faida mand hota hai.
 
 ## 11. **Gauge**
 
@@ -255,7 +303,14 @@ Basic area charts behtareen hotay hain:
 - **When to Use:**  
   Jab ek single value ka target ke against status highlight karna ho.
 
----
+**Gauge visual kab use karna chahiye Power BI mein?**
+
+<img width="384" height="186" alt="sample-gauge-chart" src="https://github.com/user-attachments/assets/ed9a8ceb-dec9-4a19-bae3-db978b3983b0" />
+
+Gauge visual tab use karna chahiye jab aapko kisi single metric ko target ke against dikhana ho. Yeh visual progress ya performance ko ek dial/jahaz ki tarah show karta hai, jisse aap asani se samajh sakte hain ke aap apne goal ke kitne kareeb hain ya kitna door hain.
+
+Misal ke taur par, agar aapko monthly sales target ke mukable mein current sales dikhani ho, to gauge visual use karke aap progress ko ek nazar mein dekh sakte hain.
+
 
 ## 12. **Card**
 
@@ -268,7 +323,13 @@ Basic area charts behtareen hotay hain:
 - **When to Use:**  
   Jab ek important metric ko prominent dikhana ho.
 
----
+**Card visual kab use karna chahiye Power BI mein?**
+
+<img width="2772" height="1765" alt="Optimizing-card-visuals-in-slow-Power-BI-reports-01" src="https://github.com/user-attachments/assets/2cc53020-1ffe-4f22-a575-d735cad108b4" />
+
+Card visual tab use karna chahiye jab aapko kisi ek important metric ya value ko highlight karna ho. Yeh simple aur clear tarike se ek number ya text ko bade font mein dikhata hai taake user ki nazar seedha us important figure par jaye.
+
+Misal ke taur par, agar aapko total sales, total customers, ya average profit jaisi key values dikhani ho, to card visual bohat effective hota hai.
 
 ## 13. **KPI Visual**
 
@@ -281,7 +342,36 @@ Basic area charts behtareen hotay hain:
 - **When to Use:**  
   Jab progress + trend dono ek sath dikhane ho.
 
+**KPI Visual kab use karna chahiye Power BI mein?**
+
+<img width="441" height="149" alt="Picture1" src="https://github.com/user-attachments/assets/5ec80523-51a8-4ca2-b2ba-bfd7a7e3b6cc" />
+
+KPI (Key Performance Indicator) visual tab use karna chahiye jab aapko kisi important metric ki current value ko uske target ke saath compare karna ho, aur performance ka quick status dikhana ho. Yeh visual aksar arrow ya color coding (jaise green, red) use karta hai taake pata chale ke target achieve hua hai ya nahi.
+
+Misal ke taur par, agar aapko monthly sales ko sales target ke saath compare karna ho, to KPI visual se aap asani se samajh sakte hain ke sales target cross hua hai ya nahi, aur kitna farq hai.
+
+### KPI aur Card mein Farq
+
+- **Card Visual:**  
+  Card sirf ek single value ko dikhata hai, jaise total sales, total customers, ya average profit. Yeh bas value show karta hai bina kisi comparison ya context ke.
+
+- **KPI Visual:**  
+  KPI visual ek important metric ko uske target ya goal ke saath compare karta hai. Isme aapko pata chalta hai ke aap apne target ke kareeb hain ya nahi, aur performance ko arrows, colors (green, red), ya percentage changes ke zariye show karta hai.
+
 ---
+
+### Simple Example:
+
+- Card:  
+  *Total Sales = 100,000*  
+
+- KPI:  
+  *Total Sales = 100,000* (Target 120,000) → Green arrow (agar target cross hua) ya red arrow (agar nahi hua)
+
+---
+
+**Summary:**  
+Card sirf number dikhata hai, jabke KPI number ke saath uski performance ya progress bhi dikhata hai.
 
 ## 14. **Funnel Chart**
 
@@ -294,9 +384,16 @@ Basic area charts behtareen hotay hain:
 - **When to Use:**  
   Jab step-by-step process me conversion rate samajhna ho.
 
----
+**Funnel Chart kab use karna chahiye Power BI mein?**
+
+<img width="343" height="229" alt="power-bi-funnel-hover" src="https://github.com/user-attachments/assets/e40ae16e-1c61-4395-ba6f-30bc264925a3" />
+
+Funnel chart tab use karna chahiye jab aapko process ke different stages mein data ka flow aur drop-off dikhana ho. Yeh chart stages ko ek funnel ki shape mein dikhata hai jisme upar se data zyada hota hai aur neeche jate jate kam hota hai, taake aap dekh saken ke process ke kis stage par sab se zyada log ya items drop ho rahe hain.
+
+Misal ke taur par, agar aapko sales pipeline dikhani ho jisme leads se lekar final sales tak har stage par kitne prospects hain, to funnel chart use karna bohat faida mand hota hai.
 
 ## 15. **Treemap**
+
 - **Purpose:**  
   Hierarchical data ko proportion ke sath dikhana.
   
@@ -306,7 +403,13 @@ Basic area charts behtareen hotay hain:
 - **When to Use:**  
   Jab hierarchy + proportion ek sath show karna ho.
 
----
+**Treemap kab use karna chahiye Power BI mein?**
+
+<img width="382" height="219" alt="power-bi-treemap-overview" src="https://github.com/user-attachments/assets/c6afaf8a-017d-4899-999b-adcbffe105be" />
+
+Treemap tab use karna chahiye jab aapko hierarchical data ko ek compact aur visual tareeke se dikhana ho. Yeh chart rectangles ke andar rectangles dikhata hai jisme har rectangle ki size aur rang uske data ke hisaab se hoti hai. Is se aap asani se data ke parts aur unka relative size samajh sakte hain.
+
+Misal ke taur par, agar aapko apni company ke different departments ke revenue ka breakdown dikhana ho, to treemap se aap samajh sakte hain ke konsa department kitna bada hissa rakhta hai total revenue mein.
 
 ## Visual Selection Tips:
 
