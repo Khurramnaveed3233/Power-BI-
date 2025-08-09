@@ -267,7 +267,9 @@ Misal ke taur par, agar aapko alag-alag shahron ya countries mein sales data dik
 - **When to Use:**  
   Jab detailed record-level data chahiye.
 
-  **Table kab use karna chahiye Power BI mein?**
+**Table kab use karna chahiye Power BI mein?**
+
+![Power-bi-conditional-formatting-only-data-bar-in-table-visual](https://github.com/user-attachments/assets/d9bef70c-8878-4937-bc19-8dce3219b196)
 
 Table visual tab use karna chahiye jab aapko apne data ko rows aur columns mein detail ke sath dikhana ho. Yeh sabse seedha aur asaan tariqa hai jisme aap multiple fields ko organize karke clear aur structured format mein report bana sakte hain.
 
