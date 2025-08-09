@@ -97,7 +97,7 @@ Better hota pehle test group se feedback lete.
 
 ---
 
-## 2. ** Line Chart **
+## 2. **Line Chart**
 
 <img width="593" height="348" alt="line" src="https://github.com/user-attachments/assets/9cf58258-2ad2-4019-9cac-68c47091f3c3" />
 
