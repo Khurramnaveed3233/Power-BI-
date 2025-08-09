@@ -125,6 +125,8 @@ Better hota pehle test group se feedback lete.
 - **When to Use:**  
   Jab categories limited ho (3–6) aur proportion highlight karna ho.**
 
+  ## 4. **Area Chart**
+
 - **Purpose:**  
   Line chart + area fill for emphasis.
   
