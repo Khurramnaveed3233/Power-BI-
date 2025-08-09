@@ -149,7 +149,6 @@ Better hota pehle test group se feedback lete.
 - **When to Use:**  
   Jab ek hi axis pe total aur breakdown dono chahiye.
 
-
 ## 6. **Clustered Bar / Column Chart**
 
 - **Purpose:**  
