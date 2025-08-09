@@ -127,7 +127,24 @@ Better hota pehle test group se feedback lete.
 
 ## 4. **Area Chart**
 
-<img width="1474" height="918" alt="cSddxky4" src="https://github.com/user-attachments/assets/b25f74de-31d0-451b-9228-2fb97ea1b49d" />
+<img width="635" height="468" alt="power-bi-chart-example" src="https://github.com/user-attachments/assets/42e40a6b-de19-460b-aad9-f30a03f7b6d9" />
+
+**Basic Area Chart** 
+
+(jise layered area chart bhi kehte hain) line chart par mabni hota hai. Axis aur line ke darmiyan jo area hota hai usay rangon se bhar diya jata hai taake volume ka izhar ho.
+
+Area charts waqt ke sath tabdeeli ki magnitude par zor dete hain, aur kisi trend ke total value par tawajjo dene ke liye istemal hotay hain. Misal ke taur par, woh data jo profit ko waqt ke sath dikhata hai, area chart mein plot karke total profit ko emphasize kiya ja sakta hai.
+
+**When to use area charts**
+
+- To show volume data trends across time series.
+- To represent single or dual data series showing the countable dataset.
+
+**Kab basic area chart use karna chahiye?**  
+Basic area charts behtareen hotay hain:
+
+- volume trend ko waqt ke silsile mein dekhne aur muqablay ke liye.  
+- ek individual series ke liye jo physically countable set ko represent karta hai.
 
 - **Purpose**  
   Line chart + area fill for emphasis.
