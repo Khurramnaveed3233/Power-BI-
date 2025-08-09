@@ -1,4 +1,4 @@
-#  Data Visualization Best Practices – Easy Roman Urdu with Real-Life Examples
+#  Data Visualization Best Practices
 
 Data visualization ka matlab sirf graph banake colors change karna nahi hai — ab visuals banane se pehle planning aur audience ko samajhna bohot zaroori hai.  
 Neeche kuch simple best practices hain jo aapke visuals ko **clear, effective aur trustable** banayenge.
