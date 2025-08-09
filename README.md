@@ -127,7 +127,9 @@ Better hota pehle test group se feedback lete.
 
 ## 4. **Area Chart**
 
-- **Purpose:**  
+<img width="1474" height="918" alt="cSddxky4" src="https://github.com/user-attachments/assets/b25f74de-31d0-451b-9228-2fb97ea1b49d" />
+
+- **Purpose**  
   Line chart + area fill for emphasis.
   
 - **Real-World Example:**  
@@ -135,8 +137,6 @@ Better hota pehle test group se feedback lete.
   
 - **When to Use:**  
   Jab aapko trend ke saath total volume ka emphasis dena ho.
-
----
 
 ## 5. **Stacked Bar / Column Chart**
 
@@ -149,7 +149,6 @@ Better hota pehle test group se feedback lete.
 - **When to Use:**  
   Jab ek hi axis pe total aur breakdown dono chahiye.
 
----
 
 ## 6. **Clustered Bar / Column Chart**
 
