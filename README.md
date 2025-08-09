@@ -72,11 +72,11 @@ Better hota pehle test group se feedback lete.
 
 ---
 
-## 🔄 Recap
-- 👥 Audience ko samjho  
-- 📜 Context do  
-- ⚖ Bias na rakho  
-- 📝 Pehle plan karo  
-- ✅ Data sahi ho  
-- 🧪 Test run karo  
+##  Recap
+-  Audience ko samjho  
+-  Context do  
+-  Bias na rakho  
+-  Pehle plan karo  
+-  Data sahi ho  
+-  Test run karo  
 
