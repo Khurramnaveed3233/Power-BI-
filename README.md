@@ -502,3 +502,23 @@ Misal ke taur par, agar aapko apni company ke different departments ke revenue k
 12. **Evolve karte raho** – Dashboard ko feedback ke basis pe update karo  
     *Example*: Agar sales team ke kehne pe discount ka column add karne se unka kaam easy ho jata hai to woh feature add kar do  
 
+#  Introduction to data models
+
+As a data analyst, aapko bohot zyada records manage karne padte hain (hazaron ya lakhon tak). Insights hasil karne ka behtareen tareeqa ye hai ke raw data ko data models me convert kiya jaye.  
+
+Data model ka kaam hota hai alag alag data sources (jaise sales, customers, marketing) ko ek jagah combine karna, taake unse useful visualizations aur analysis kiya ja sake.  
+
+Power BI ek tool hai jahan aap data models bana sakte hain, relationships define kar sakte hain (jaise Customer ID ke zariye sales aur customer tables ko link karna), data types assign kar sakte hain, aur calculated columns & measures create kar sakte hain using DAX.  
+
+Data modeling ke main steps:  
+1. Data sources se connect hona  
+2. Data ko clean aur transform karna  
+3. Tables aur columns ka structure set karna  
+4. Relationships define karna  
+5. Measures aur calculated columns create karna (DAX)  
+
+Achhi data modeling se reports fast hoti hain, data aggregation easy hota hai (hierarchies ke saath), aur advanced analytics possible hota hai (complex measures, predictive analysis).  
+
+Example: Adventure Works ne apne customers, sales, aur marketing data ko ek model me combine kiya, relationships set kiye aur DAX calculations banayi, jis se pata chala kaunsi campaigns ne sales boost ki.  
+
+Conclusion: Data model foundation hota hai aapke analysis ka. Agar ye structured aur optimized ho, to insights accurate aur reliable milte hain.
