@@ -851,89 +851,742 @@ Har dimension table ek ya multiple related tables se connected hoti hai, jisse e
 Sahi schema choose karna aapke **analysis ke needs**, **data ki complexity**, aur **relationships** par depend karta hai.  
 Har schema type ke advantages aur limitations samajh kar aap better database design decisions le sakte hain jo efficient aur effective data storage aur management ko ensure karte hain.  
 
-## Adventure Works Analysis Overview
+orks might hide columns containing sensitive customer information (like phone numbers or addresses) from the `Customer` table to focus on relevant data for their analysis.  
 
-Adventure Works apne **sales, customer, aur product data** ka analysis karna chahta hai taake marketing strategies improve ki ja saken, product offerings enhance ho saken, aur overall customer experience behtar ho sake.
+---
+# Fact aur Dimension Tables ko Samajhna
 
-Adventure Works ke paas 3 main datasets hain:  
-1. **Sales** table – Transaction data store karti hai  
-2. **Customer** table – Customer information store karti hai  
-3. **Product** table – Product details store karti hai  
+Jaise aap ne pehle seekha tha, **schemas** ka use data organize karne ke liye hota hai. Schemas ke do main hisson me se aik hai **fact tables** aur **dimension tables**. Yahan hum in dono ko detail me samjhenge aur dekhenge ke kaise ye schemas banane me madad karte hain.
 
-Goal yeh hai ke in tables ka data samjha jaye aur unke **tables aur columns manipulate karke** useful insights generate kiye jayein.
+Adventure Works ko delivery errors ka samna ho raha hai. Is maslay ko solve karne ke liye company ko apne data ka analysis karna hoga aur asal wajah samajhni hogi. Fact aur dimension tables is kaam me bohot madadgar hain.
+
+## Fact Tables
+Fact tables ko "fact" tables is liye kaha jata hai kyun ke ye business process ke **measurements, metrics ya facts** ko store karte hain. Ye data **quantifiable aur measurable** hota hai.
+
+Adventure Works ka example:
+- **Sales Orders** fact table Star schema ke center me hota hai.
+- Isme hota hai:
+  - Order ID  
+  - Product ID  
+  - Customer ID  
+  - Quantity  
+  - Total Price  
+
+Ye columns transactions ki asal details store karte hain, jaise kis customer ne kya product kharida aur kitne paise diye.
+
+## Dimension Tables
+Dimension tables me aam tor par **descriptive attributes** hote hain jo fact data ko context dete hain. Ye tables business events ka background provide karte hain.
+
+Adventure Works ka example:
+- Fact table ke saath linked dimension tables:
+  - Date  
+  - Customer  
+  - Sales  
+  - Product  
+
+Ye tables extra tafseelat rakhte hain jaise customer ka naam, product ka description, aur purchase ki tareekh.
+
+## Star Schema Structure
+**Star schema** me:
+- **Fact table** center me hota hai.
+- **Dimension tables** star ke points ki tarah fact table se direct connect hote hain.
+
+Example:
+- **Sales Orders** fact table center me hota hai.
+- Dimension tables jaise **Date**, **Customer**, aur **Product** us se direct linked hote hain.
+- Is se queries simple hoti hain, jaise "specific date par total sales kitni hui" ka jawab sirf do tables join karke mil jata hai.
+
+## Snowflake Schema
+**Snowflake schema** Star schema ka advanced version hai jo **normalization** ka use karta hai dimension tables ko chote related tables me todne ke liye.
+
+Example:
+- **Product** dimension table ko split kiya ja sakta hai:
+  - Product table  
+  - Subcategory table  
+  - Category table  
+
+Ye design **data redundancy** kam karta hai lekin **queries** thodi complex ho jati hain.
+
+## Business Use Case: Adventure Works
+Snowflake schema ka use karke Adventure Works:
+- Required data sources import kar sakta hai.
+- Data ko normalized structure me organize kar sakta hai.
+- Delivery errors ka analysis kar sakta hai.
+
+Possible findings:
+- Masla inventory management se related ho sakta hai.
+- Galat customer addresses bhi delivery issues ka sabab ban sakte hain.
+
+## Conclusion
+Fact aur dimension tables database schema banane ke liye bohot zaroori hain.  
+Ye madad karte hain:
+- Data ko efficiently organize karne me.
+- Clear insights nikalne me.
+- Decision-making ko support karne me.
+
+Adventure Works in schema designs ka use karke delivery errors kam kar sakta hai aur customer satisfaction barha sakta hai.
+
+# Normalization aur Denormalization
+
+## Introduction
+Microsoft Power BI me aik Data Analyst ka sab se important kaam data models banana aur manage karna hota hai. Agar aap yeh kaam effectively karein to aap apni team ke liye data ko samajhna asaan bana dete hain. Lekin, aik sawal jo aksar saamne aata hai wo hai, **"normalize karein ya denormalize?"**
+
+Is reading me hum normalization aur denormalization ke concepts ko explore karenge, yeh data model par kaise asar dalte hain, aur Power Query ka use karke kaise in techniques ko implement kiya ja sakta hai.
+
+## Data Model aur Us ke Advantages
+Jaise aap pehle se jaante hain, **data model** data elements ki aik conceptual representation hoti hai.  
+Yeh aik visual overview hota hai jisme tables, unke columns aur unke darmiyan relationships show hote hain.
+
+Agar data model sahi design kiya gaya ho to yeh advantages deta hai:
+
+- Data ko fast explore karne ka moka  
+- Aggregates banane me asaani  
+- Accurate reporting  
+- Reports jaldi create karna  
+- Reports ka maintenance simple ban jata hai  
+
+Iske alawa, normalization ya denormalization use karke aur bhi advantages mil sakte hain.
+
+## Normalization
+
+**Normalization** aik data model design technique hai jisme data ko is tarah structure kiya jata hai ke redundancy kam ho aur data integrity maintain rahe.  
+Isme data ko multiple related tables me divide kiya jata hai, jisme har table ka apna aik specific purpose hota hai.  
+
+Is tarah se data duplication kam ho jata hai, lekin tables ke darmiyan complex relationships create karni parti hain.
+
+Normalization ke advantages:
+
+- Redundant data ka removal  
+- Data integrity me behtari  
+- Data model ka maintenance easy ho jata hai  
+
+Normalization me tables ke darmiyan relationships **primary keys** aur **foreign keys** ka use karke banaye jate hain.  
+**Primary key** wo column hota hai jo har row ko uniquely identify karta hai.
+
+## Introduction to Cardinality
+
+Aksar aapko bohot bade datasets ko samajhna hota hai aur tables ke darmiyan relationships ko clear karna hota hai. Aisi situations mein cardinality aur table relationships ka samajhna bohot kaam aata hai. AdventureWorks apne data se business planning ke liye sawalat poochta hai jaise ke kaun se bicycle sales har region mein best hain ya har store ka revenue kitna hai. Ye data alag alag tables mein pada hota hai jo ek complex data analytics challenge hota hai. Ye challenge cardinality samajh kar aur table relationships identify karke solve kiya ja sakta hai.
+
+### Cardinality ka matlab
+
+Data analytics ke context mein cardinality ka matlab hota hai do datasets ke darmiyan relationship ka nature, yani tables aapas mein kaise linked hain. Agar cardinality settings galat ho to analysis galat ho sakta hai aur business decisions bhi flawed ho sakte hain. Power BI mein cardinality ke 3 types hote hain:
+
+1. **One-to-One Relationship**
+    
+Is case mein Table A ke ek record ka link Table B ke ek unique record se hota hai. Ye relationship zyada common nahi hota, lekin specific scenarios mein kaam aata hai. Misal ke taur par, ek hi business entity ka data do alag model tables se load kiya ja sakta hai kyun ke data different sources se aata hai. AdventureWorks dataset mein har bicycle model ka ek unique model ID hota hai jo Product ID column mein hota hai aur ek alag table mein us model ke features listed hote hain. Ye dono milkar one-to-one relationship banate hain.
+
+3. **One-to-Many Relationship**
+   
+Is mein Table A ka ek record, Table B ke multiple records se linked hota hai, lekin ulta nahi. Misal ke taur par, AdventureWorks mein Table A stores ki list rakhta hai aur Table B un stores ke employees ka data. Har employee ek store mein kaam karta hai, lekin har store ke multiple employees ho sakte hain. Ye sabse common relationship type hai jahan ek table primary hota hai aur doosre related tables.
+
+4. **Many-to-Many Relationship**
+   
+Is case mein Table A ke multiple records Table B ke multiple records se linked hote hain dono directions mein. Ye zyada tar do fact tables ya do dimension tables ke darmiyan hota hai. AdventureWorks ke example mein, ek customer multiple bicycle models khareed sakta hai aur har model multiple customers ke paas ho sakta hai. Ye many-to-many relationship ka example hai.
+
+### Granularity ka concept
+
+Granularity ka matlab hota hai dataset ka level of detail ya depth. Ye business ke sawalon ke hisaab se align honi chahiye.  
+- Agar AdventureWorks customers ki last year purchase history din ke level par dekhna chahta hai, to daily granularity detail transactions dikhayegi jo customer behavior aur purchase patterns identify karne mein help karegi.  
+- Agar region-wise best performing bicycle models samajhne hain to high granularity sales data chahiye.  
+- Agar sirf monthly sales per store dekhni hain to low granularity ka aggregated data kaafi hota hai.
+
+Sahi granularity set karna zaroori hai kyun ke galat granularity data ko misrepresent kar sakti hai, aur zyada granularity queries ko slow kar sakti hai. Cardinality aur granularity ko samajh kar aap complex data scenarios ko confidently handle kar sakte hain.
+
+## Managing Model Relationships
+
+### Introduction
+Aaj ke digital daur mein businesses bohot saara data collect karte hain jo opportunities aur challenges dono create karta hai. Agar is data ko sahi tareeke se handle kiya jaye to ye strategic decisions lene aur business growth mein madad karta hai.
+
+Lekin sawal ye hai ke businesses is data ko effectively kaise use karein? Ek key strategy hai data model relationships ko samajhna aur unhein Microsoft Power BI jaise data analysis tools mein implement karna.
+
+Is reading mein aap model relationships ke baare mein seekhenge, jaanenge kaise apne data models mein maujood relationships identify karein aur naye create karein.
 
 ---
 
-## Table Properties in Power BI
-
-Power BI mein **tables** data modeling, analysis, aur visualization ka base element hoti hain.  
-Agar aapko Power BI ka maximum potential use karna hai, to aapko tables ke **different properties** samajhna aur manage karna zaroori hai.
-
-### Key Properties of Tables in Power BI
-- **Name**: Table ka naam jo data model mein identify hota hai  
-- **Description**: Optional detail jo table ke purpose ko explain karti hai  
-- **Data Category**: Column ya table ka context define karta hai, jaise geographic data ya product codes  
-- **Storage Mode**: Import, DirectQuery, ya Dual mode define karta hai ki data Power BI mein kaise store hoga  
-- **Relationships**: Table ka connection dusri tables ke saath define karta hai  
-- **Calculated Columns & Measures**: Data model ke andar naye fields create karne ka feature  
-
-<img width="1471" height="828" alt="22" src="https://github.com/user-attachments/assets/284f6e37-9c70-4bbe-a04c-6d19b317832b" />
-
-## Power BI Table and Column Properties (Adventure Works Example)
-
-### **1. Name**
-- **Definition**: Unique identifier for the table, descriptive and easy to understand. Tables have rows (data records) and columns (attributes).  
-- **Example**: Tables named `Sales`, `Customer`, and `Product`. Columns in `Sales` table: `OrderID`, `CustomerID`, `ProductID`, `Quantity`, `Price`.
-
-### **2. Display Name**
-- **Definition**: User-friendly name shown in Power BI.  
-- **Example**: Display name for Adventure Works table: `AdventureWorksData`.
-
-### **3. Table Description**
-- **Definition**: Additional context about the table’s purpose and content, useful for collaboration.  
-- **Example**: In Orders table, description could be "Orders of sales of the product in the dataset".
-
-### **4. Data Category**
-- **Definition**: Helps Power BI understand column context by categorizing data (e.g., geography, URLs, email).  
-- **Example**: Customer table's email column assigned category **Email**.
-
-### **5. Summarization**
-- **Definition**: Defines default aggregation method for numeric columns (SUM, AVERAGE, MIN, MAX, COUNT).  
-- **Example**: Sales table `Quantity` column set to **SUM** for total products sold.
-
-### **6. Sort by Column**
-- **Definition**: Specifies a default column for sorting.  
-- **Example**: Product table `ProductName` sorted ascending for easier browsing.
-
-### **7. Hide or Show Tables**
-- **Definition**: Option to hide or display tables in data model, useful for intermediate or sensitive data.  
-- **Example**: Hide Customer table columns containing sensitive profit or income data.
-
-### **8. Relationship**
-- **Definition**: Connects tables for cross-table analysis.  
-- **Example**: Link Sales `CustomerID` to Customer `CustomerID` and Sales `ProductID` to Product `ProductID` for analysis like total sales by customer or popular products.
+### Adventure Works aur Model Relationships
+Adventure Works mein bohot zyada data generate hota hai jo different sources se aata hai jaise customer management, inventory management, product aur sales transaction records, har store ki sales, aur bohot kuch. Ye data dekhne mein scattered lagta hai lekin Power BI ka data modeling tool is data ko ek coherent structure mein laa sakta hai.
 
 ---
 
-## **Column Properties**
-In Power BI, column properties control how column data is displayed, treated, and analyzed. Proper configuration ensures:
-- **Data accuracy**
-- **Better visualization quality**
-- **Improved user experience**
+### Model Relationships kya hoti hain?
+Data analytics mein ek data model ka matlab hota hai data structure ka conceptual design jo tables ke darmiyan relationships aur un relationships ke rules ko define karta hai.
 
-Common column properties include:
-- **Name & Data Type**
-- **Format (currency, date, percentage)**
-- **Sort order**
-- **Default summarization**
-- **Data category**
-- **Visibility (hide/show)**
-
-<img width="1476" height="825" alt="23" src="https://github.com/user-attachments/assets/2a3d3a97-f722-4ccc-b761-ea278ccc342e" />
-
-
+Data models kisi bhi data exploration ka base hote hain, khaas taur par Microsoft Power BI mein. Ye alag alag data ko ek coherent, visually appealing aur interactive insights mein transform karte hain. Is process se raw data valuable aur actionable insights ban jata hai.
 
 ---
+
+### Relationships ka Purpose
+Power BI mein data tables ko model relationships ke zariye connect kiya jata hai. Ye relationships one-direction ya two-direction mein filter ho sakti hain jo cardinality aur cross-filter direction par depend karti hain.
+
+Aksar filter ka propagation relationship ke one side se ‘many’ side ki taraf hota hai. Ye propagation tab hoti hai jab tables ke darmiyan ek clear relationship path ho.
+
+Power BI mein relationship paths deterministic hote hain, yani filter ka propagation hamesha ek hi tareeke se hota hai without random variation. Lekin filters ko disable ya modify kiya ja sakta hai specific analysis needs ke liye DAX calculations ka use karke. Aap DAX ke details aane wale lessons mein seekhenge.
+
+---
+
+### Types of Cardinality in Power BI
+Cardinality ka matlab hai do data tables ke darmiyan relationship ka nature. Dusre lafzon mein, tables ek doosre se kaise relate hote hain. Power BI mein 3 types ki cardinality hoti hai:
+
+1. **One-to-One**  
+2. **One-to-Many**  
+3. **Many-to-Many**
+
+Model view mein aap tables ke darmiyan relationships dekh sakte hain. Misal ke taur par, ek diagram ek one-to-many relationship show kar sakta hai jahan Product table ke har row (jo ek individual product represent karta hai) ka link Sales table ke bohot saare rows se hota hai (jo us product ki individual sales represent karte hain).
+
+<img width="593" height="321" alt="24" src="https://github.com/user-attachments/assets/320fdd21-5861-4f8d-b4f9-b3cb2feb78e7" />
+
+## Creating Relationships in Power BI
+
+Power BI mein relationships do tareeqon se create ki ja sakti hain: automatically ya manually. Aaiye in dono methods ko detail mein samajhtay hain.
+
+---
+
+### Autodetect Relationships  
+Jab aap Power Query ke zariye do ya zyada tables load karte hain, Power BI desktop automatically un tables ke darmiyan common columns ki basis par relationships detect kar leta hai. Is process mein cardinality aur cross-filter direction bhi automatically set ho jati hai.
+
+Kabhi kabhi, ye autodetected relationships accurate nahi hoti. Aise cases mein, aapko relationships manually create karni parti hain. Agar chahein to Power BI desktop mein autodetect relationships function ko bhi disable kar sakte hain.
+
+---
+
+### Manually Create Relationships  
+Power BI desktop ke Model view mein aap manually relationships create kar sakte hain. 
+
+- Home tab par ja kar **Manage Relationships** select karein.  
+- Is se ek **Create relationship** dialog box khulta hai.  
+- Is dialog box mein aap apne loaded dataset ke tables ke darmiyan relationships create aur configure kar sakte hain.
+
+Neeche diagram mein iska ek example dikhaya gaya hai:
+
+<img width="1415" height="795" alt="25" src="https://github.com/user-attachments/assets/36251794-4281-47f9-a702-0e9995482370" />
+
+## Editing Relationships
+
+Power BI mein relationships ko edit karna bohat asaan hai. Aap ye kaam **Model view** ke **Properties pane** se kar sakte hain (jo ke neeche diagram mein dikhaya gaya hai) ya phir **Relationship Editor** dialog box se.
+
+---
+
+### Relationship Editor Dialog Box
+
+Is dialog box ko kholne ke kai tareeqay hain:  
+- Aap directly do tables ke darmiyan relationship line par click karke isay open kar sakte hain.  
+- Ya phir Power BI desktop ke **Model view** mein ja kar **Manage Relationships** select kar ke bhi is dialog box ko access kar sakte hain.
+
+Is dialog box mein aap relationship ki settings ko modify kar sakte hain, jaise ke cardinality, cross-filter direction, aur active/inactive status waghera.
+
+<img width="1358" height="764" alt="26" src="https://github.com/user-attachments/assets/7b223fa9-e729-434f-a25f-db3765fe6d57" />
+
+## Conclusion
+
+Aakhir mein, data model relationships ko samajhna aur unka moassar istemal karna data analysis ke liye bohat zaroori hai. Microsoft Power BI ek aisa platform hai jo aapko in relationships ko asaani se banane aur explore karne ki sahulat deta hai.
+
+Cardinality ko dhyan mein rakhte hue aur model relationships ko theek tareeqay se structure kar ke, aap apne Power BI data model ko optimize kar sakte hain.  
+Ek optimized model analysis, visualization, aur reporting ko zyada moassar banata hai, jo aakhir kar behtareen faislay lene mein madadgar sabit hota hai.
+
+## Managing Model Relationships
+
+Data analyst ke liye model relationships ko samajhna aur manage karna bohat important skill hai. Jab aap business challenges solve kar rahe hote hain aur naye opportunities identify karte hain, to aap kayi tarah ke data models banate hain, aur in models mein tables ke darmiyan alag-alag relationships create aur manage karni parti hain.
+
+### Cheatsheet for Model Relationships
+
+Neeche kuch aam model relationships diye gaye hain jo aksar business data ko accurately represent karte hain:
+
+- **One-to-one relationship**  
+- **One-to-many relationship**  
+- **Many-to-many relationship**  
+
+### Overview of Model Relationships
+
+Relationships tables ko data model mein connect karti hain aur data filtering ko influence karti hain. Aksar use hone wale teen types hain:
+
+---
+
+### One-to-One Relationship
+
+<img width="1401" height="788" alt="27" src="https://github.com/user-attachments/assets/4ccfd2e7-aeb1-48fc-b44c-7c6c7820d136" />
+
+One-to-one relationship wo hota hai jahan har row ek table ki sirf ek row se doosre table mein match karti hai.
+
+Is relationship mein crossfilter direction sirf *Both* ho sakta hai. Matlab agar ek table pe filter lagaya jaye to woh filter doosre table pe bhi apply hota hai.
+
+**Example:**  
+
+Adventure Works ke paas do dimension tables hain: *Product* aur *Product Category*. Dono tables mein ek common column hai, *SKU (Stock Keeping Unit)*. Yeh columns unique values rakhte hain.  
+
+Isliye, SKU column ki base par dono tables ke beech ek one-to-one relationship hai. Jab SKU ke through Product Category table filter hota hai, to Products table bhi un products tak limited ho jata hai jo is SKU se related hain.
+
+
+### One-to-Many Relationship
+
+<img width="1401" height="788" alt="28" src="https://github.com/user-attachments/assets/2b8f1288-2a9e-4a38-83c7-8a15cbe42d73" />
+
+Ab hum ek aur important relationship type, **one-to-many relationship** ko samjhte hain.  
+
+One-to-many relationship tab hota hai jab ek table (Table A) ke column ka har value doosre table (Table B) ke column ke multiple values se related ho sakta hai.
+
+Ye sab se common cardinality type hai aur Power BI mein default relationship bhi hai. Zyada tar data models mein, one-to-many relationship fact table aur dimension table ke darmiyan direction ko describe karta hai.
+
+**Example:**  
+Adventure Works mein, *Sales* table jo ke fact table hai, uska connection *Salesperson* table se hai jo ke dimension table hai. Dono tables mein *EmployeeKey* column hai jo in dono tables ke beech relationship establish karta hai.
+
+Salesperson table mein *EmployeeKey* unique hota hai har row ke liye, kyun ke har salesperson sirf ek dafa hota hai. Lekin ek salesperson ke multiple sales ho sakte hain, is liye Sales table mein *EmployeeKey* kai rows mein repeat hota hai.
+
+Neeche diagram mein ye dikhaya gaya hai ke har salesperson multiple sales se related ho sakta hai.
+
+### Many-to-Many Relationship
+
+<img width="1401" height="788" alt="29" src="https://github.com/user-attachments/assets/b81f6ad6-4f56-41aa-8e29-167970edd581" />
+
+Aakhir mein, **many-to-many relationship** hota hai. Ye tab hota hai jab ek table ke column ke multiple values doosre related table ke column ke multiple values se associated hon.
+
+Is relationship mein dono tables ke columns mein unique values hona zaroori nahi hota.
+
+**Disadvantage:**  
+Many-to-many relationship data analysis mein ambiguity paida kar sakta hai. Is liye ye sirf specific scenarios mein use karna chahiye. Ye aam tor par do fact tables ya do dimension tables ke darmiyan hota hai.
+
+**Example:**  
+Adventure Works ke *Sales* aur *Inventory* fact tables dono mein *ProductKey* column hota hai jo many-to-many relationship se connected hai. Iska matlab hai ke ek specific product key ke liye multiple sales ho sakti hain, aur wo product key warehouse ke multiple inventories mein bhi ho sakta hai.
+
+Data model mein iska matlab hai ke kisi bhi ProductKey ke liye Sales table mein kai rows ho sakti hain aur Inventory table mein bhi kai rows ho sakti hain. Ye many-to-many relationship tab banta hai jab ProductKey ka koi unique value na ho.
+
+### Conclusion
+
+Jab aap apne data analysis ka plan banayein, to business domain ko dhyan mein rakhein aur sochain ke business ko data model mein behtareen tareeke se kaise represent kiya ja sakta hai. Aapko apne goals aur insights ko bhi madde nazar rakhna chahiye jo aap hasil karna chahte hain.
+
+Sahi relationships banakar, aap data mein chhupi hui qeemti maloomat ko behtari se samajh sakte hain aur use kar sakte hain.
+
+### Introduction to Cross-Filter Direction
+
+Multiple datasets ke darmiyan relationships samajhna ek advanced tool mangta hai, aur Microsoft Power BI ke cross-filters is ka behtareen hal hain. Is video mein, aap cross-filter direction ka concept samjhenge aur alag-alag types ke cross-filters pehchan-na seekhenge.
+
+Adventure Works ko yeh pata karna hai ke uski sales team ke kaunse members ne sabse zyada product types beche hain aur jinhein bonus diya jana chahiye. Lekin required data kai tables mein distributed hai aur unki cross-filter directions fixed hain. Aap Adventure Works ki madad kar sakte hain tables ki cross-filter directions badal kar data analyze karne mein.
+
+Sab se pehle, samajhte hain ke data analysts cross-filter direction se kya murad rakhte hain. Power BI mein, cross-filter direction ka matlab hai wo raasta ya direction jisse filtering do tables ke darmiyan hoti hai.
+
+Ye batata hai ke ek table ka data doosre table ko kaise influence karta hai. Is se relational analysis asaan hota hai bina complex queries ya manual data consolidation ke. Power BI ke relationships directional hotay hain, aur ye direction filtering ko bohat affect karti hai.
+
+### Adventure Works Example
+
+Adventure Works dataset mein teen tables hain: Product, Sales, aur Salesperson.
+
+- Product dimension table, Sales fact table se one-to-many relationship ke zariye juda hai, dono tables ke Product ID column ke basis pe.
+- Salesperson dimension table bhi Sales fact table se one-to-many relationship mein hai, dono ke common Rep ID columns ke zariye.
+
+### Types of Cross-Filter Direction
+
+1. **Single Cross-Filter Direction**  
+   Ye Power BI ka default setting hai. Filter ek table se doosre table tak propagate hota hai, lekin vice versa nahi.  
+   Adventure Works ke product aur salesperson tables sales table se single direction mein linked hain. Iska matlab jab product table filter hota hai kisi product pe, sales table automatically us product ki sari sales show karta hai.
+
+2. **Bi-Directional Cross-Filter Direction**  
+   Is mein filter dono tables mein propagate hota hai, yani dono directions mein filtering hoti hai.  
+   Kabhi-kabhi aise filtering ki zarurat hoti hai specific questions ke jawab dene ke liye.  
+   Adventure Works ko ek report chahiye jo employee performance show kare, jismein har salesperson ne kitne unique products beche hain. Is ke liye bi-directional filtering chahiye jahan filter sales table se salesperson aur product tables dono ko affect kare.
+
+### Important Points About Bi-Directional Filtering
+
+- Bi-directional filtering performance ko negative tareeke se affect kar sakta hai.
+- Is se filter propagation paths ambiguous bhi ho sakte hain.
+- Power BI mein aap DAX function ke zariye filter propagation ko disable bhi kar sakte hain, jo advanced scenarios mein useful hota hai jahan data ko isolate karna zaroori hota hai.
+
+### Summary
+
+Relationships ki direction data modeling mein bohat ahmiyat rakhti hai. Cross-filter directions ko sahi tareeke se apply karne se data analysis behad behtareen ho sakta hai, jis se aap insightful aur actionable conclusions nikal sakte hain.
+
+### Defining Data Granularity
+
+Different datasets ko alag-alag levels of detail pe explore kiya jata hai, jo questions poochne par depend karta hai. In questions ke jawab dene ke liye aapko data granularity ke mukhtalif levels pe kaam karna hota hai. Agle chand minutes mein, aap data granularity ka concept samjhenge aur jaanenge ke yeh aapke data analysis mein kaise madadgar ho sakta hai.
+
+Adventure Works ko sales data chahiye taake woh strategic decisions le sakein ke kaunse products stock karne hain. Unhe highest aur lowest performing products identify karne hain, annual aur daily sales data ke zariye. Aap data granularity use kar ke unke sales records analyze kar ke yeh insights generate karne mein madad kar sakte hain.
+
+---
+
+### Data Granularity Kya Hai?
+
+Data granularity se murad hai ke kisi dataset ya data field mein kitni tafseel ya depth capture hui hai. Granular data ziada gehri aur precise insights deta hai, jo zyada valuable findings provide karta hai. Yeh zaruri nahi ke hamesha sab se ziada detail ho, balki munasib level of detail hona chahiye.
+
+Analysis shuru karne se pehle apne aap se poochhain: kya aapko high granularity chahiye ya low granularity? Yeh faisla aapke analysis ke specific requirements aur objectives pe depend karta hai.
+
+---
+
+### High Granularity Data
+
+High granularity data wo hota hai jisme har transaction ki bohat tafseeli maloomat record ki jati hai. Is level ki granularity har transaction ka mukammal overview deti hai, jisme specific attributes aur metrics shamil hote hain.
+
+**Adventure Works Example:**  
+Product related data jaise ke Product ID, Category, Subcategory, Name, Price, Size, Weight, waghera granular data ke examples hain.
+
+**Benefits:**
+
+- Trends, patterns, aur relationships ko gehrai se explore karna
+- Specific behaviors aur anomalies ko identify karna
+- Data ko mukhtalif levels pe aggregate aur summarize karne ki flexibility
+- Specific data points pe drill-down kar ke accurate decision making
+
+---
+
+### Low Granularity Data
+
+Low granularity data mein information high-level summary ya aggregated form mein hoti hai. Data individual records mein break nahi hota, balke broader categories ya periods ke hisaab se summarize hota hai.
+
+**Adventure Works Example:**  
+Quarter ya monthly sales data ko analyze karna.
+
+**Benefits:**
+
+- Simplified view jo samajhna asaan ho
+- Analysis bina overwhelming detail ke
+- Behtareen performance aur kam data volume, jis se queries tez chalte hain
+- Trends aur patterns ko jaldi identify karna
+
+---
+
+### Granularity ka Role in Data Analysis
+
+High granularity data ziada desirable hota hai kyun ke ye ziada precise aur gehri insights deta hai. Misal ke taur pe, agar aap hourly sales track karte hain (high granularity) bajaye monthly sales ke (low granularity), to aap peak shopping hours jaise patterns dekh sakte hain.
+
+Lekin high granularity data bada hota hai jo processing slow kar sakta hai. Low granularity data chhota aur manageable hota hai, lekin detail kam hoti hai.
+
+---
+
+### Adventure Works Case
+
+Adventure Works ka monthly sales data (low granularity) seasonal trends identify karne mein madad karta hai, jaise ke bicycle repair equipment zyada spring aur summer mein bikta hai kyun ke log apni bicycles zyada use karte hain.
+
+Granularity levels match karne se aap relationships accurate bana sakte hain, consistent aggregations produce kar sakte hain, aur filtering aur drill-down analysis ko support karte hain.
+
+---
+
+### Granularity aur Relationships in Power BI
+
+Power BI mein tables ke darmiyan relationships banate waqt granularity bohat important hoti hai. Misal ke taur pe:
+
+- Sales table daily level granularity rakhta hai
+- Budget table monthly level granularity rakhta hai
+
+In tables ke darmiyan relationship banane ke liye, date columns ko ek jaisa format karna zaruri hota hai, phir unke darmiyan relationship banaya jata hai.
+
+---
+
+### Conclusion
+
+- Data granularity ko samajhna aur usay manipulate karna har data analyst ke liye aik zaroori skill hai. Granularity ka level aapke insights aur analysis ki asani dono par asar dalta hai.
+
+- Ab aap data granularity ki samajh ke sath apne data analysis tasks ko behtareen nazar se dekh sakte hain, aur data mein chhupe hue kahani ko behtareen tareeke se samajh sakte hain.
+
+# Introduction to Calculated Tables
+
+Aap hamesha business questions ka jawab apne existing data model se nahi de sakte. Kabhi kabhi data model required data nahi rakhta ya bohat complex hota hai. Aise cases mein, aap **calculated** aur **cloned tables** ka use karke apne datasets ko enhance kar sakte hain aur analysis behtar bana sakte hain. Adventure Works ko apni sales aur marketing se related specific business questions ke jawab chahiye, lekin unka current data model is kaam ke laayak nahi. Calculated tables bana kar woh apna data compare aur analyze kar sakte hain taake required insights hasil ho saken.
+
+## Cloning a Table
+
+Table ko clone karna bohat faidemand hota hai jab aap data ko manipulate ya augment karna chahte hain bina original table ko affect kiye. Yeh khas tor par tab useful hota hai jab tables periodic refresh hote hain, jahan original table ke changes overwrite ho sakte hain.
+
+**Example:** Adventure Works apni sales table ko augment karna chahta hai taake insights nikal sake, magar original data ko change nahi karna chahta. Is liye woh cloned version create karta hai aur us par kaam karta hai.
+
+**Syntax:**  
+NewTableName = ALL(OriginalTableName)
+
+Is formula ka matlab hai ke cloned table bilkul original table ke barabar hai.
+
+Calculated Tables with DAX
+DAX ka use kar ke aap calculated tables bana sakte hain jo mukhtalif sources ke data par based hoti hain.
+
+Example: Adventure Works customer data jo database mein hai, use sales data ke saath jo Excel mein hai, combine karna chahta hai taake sales aur customers ke darmiyan relation analyze kar sake. Calculated tables ko dimension tables ko normalize karne ke liye bhi use kiya ja sakta hai.
+
+Example: Product dimension table ko category aur subcategory tables mein split karna, jisse hierarchy banti hai aur data exploration aur reporting efficient hoti hai.
+
+**Calculated Table Banane ka Tariqa**
+
+1. Power BI ke Data view mein ja kar New Table select karen, jisse DAX Formula bar khulta hai.
+2. Formula bar mein likhen, jaise ke:
+ClonedSales = ALL(Sales)
+
+Enter press karen taake sales table ka exact clone ban jaye.
+
+3. Agla step calculated table banana hai jo multiple datasets se data summarize kare.
+4. Phir, AddColumns, SUMMARIZE, aur CALCULATE jaisi DAX functions use karte hue annual sales summary table banayen.
+
+Ensure karen ke tables ke darmiyan relationships sahi tareeke se set hon.
+
+**Faida aur Istemaal**
+
+- Calculated tables aapko analysis karne ki ijazat dete hain bina original datasets ko affect kiye.
+- Adventure Works ab naye calculated tables aur existing data se visualizations aur reports bana kar specific business questions ke jawab nikal sakta hai.
+- DAX functions ka istemaal seekh kar aap apni data analysis skills ko mazboot kar sakte hain.
+- Summary: Calculated aur cloned tables Power BI aur DAX mein data analysis ko simplify aur enhance karte hain, aur aapko flexible analysis karne ka moka dete hain.
+
+# Introduction to Measures
+
+Measures aapke data mein chhupe hue information ko samajhne aur uski asli taqat ko sametne mein madad karte hain. Agle kuch minutes mein, aap measures aur unki data analysis mein ahmiyat ko explore karenge. Saath hi, aap jaanenge ke calculated tables pre-calculated measures se kaise bante hain.
+
+AdventureWorks ko apni is mahine ki sales data ka calculation karna hai, aur yeh calculation har mahine naye sales data ke mutabiq update hona chahiye. Yeh insights woh measures ke zariye hasil kar sakta hai. Aap measures ke functions ko samajhne ke liye AdventureWorks ke example ko dekhenge.
+
+## Overview of Measures
+
+Power BI mein measures data model ke fields par calculations perform karne ke liye istemal hote hain. Measures data analysis aur interpretation mein bohat ahm role ada karte hain. Yeh aggregations, calculations, ya evaluations karte hain jo meaningful insights dete hain. 
+
+Measures aksar data visualization elements jese ke charts, tables, aur cards mein istemal hote hain. Aap measures ke zariye aggregate values calculate kar sakte hain, jese sums, averages, minimum, maximum, counts, ya complex statistical calculations.
+
+## Benefits of Measures
+
+- **Dynamic Calculation:** Measures visualization ke context ke mutabiq calculate hote hain, iska matlab ke filtering ya report ki dusri interactions ke hisaab se measures update hotay hain. Agar context badalta hai, toh measure bhi badalta hai. Yeh flexibility aapko data ko alag angles se samajhne mein madad deti hai.
+
+- **Reusability:** Measures ek martaba create karne ke baad code mein baar baar call kiye ja sakte hain, jis se bar bar ek jese calculations karne ki zarurat nahi padti aur data consistency barqarar rehti hai.
+
+- **Performance Tracking:** Measures business ke mukhtalif aspects ki performance track karne ke liye use hote hain, aur KPIs banane mein madad karte hain. KPIs se business ki performance ka snapshot milta hai against predefined targets.
+
+- **Consistency:** Measures ensure karte hain ke metrics har visualization aur report mein consistent rahein, filtering ya grouping se farq nahi padta.
+
+## Measures aur Calculated Tables
+
+Measures calculated tables banane mein bhi madadgar hote hain. Calculated table wo table hota hai jo existing tables se derived hota hai. 
+
+**Example:** AdventureWorks ne ek measure banaya hai `Total Sales` jo tamam products ki total sales ka sum karta hai. Ab unhe ek naya product table banana hai jisme har product ke saath uski total sales bhi ho. Yeh DAX formula ke zariye mumkin hai.
+
+### DAX Formula Syntax Example:
+
+Total Sales = SUM(Sales[SalesAmount])
+
+Is tarah, calculated tables pre-calculated measures se bana kar large datasets ka summary create karna ya aise tables banana jo original data mein nahi hain, aasan hota hai. Yeh Power BI mein data analysis aur visualization capabilities ko enhance karta hai.
+
+**Summary:**
+
+Measures Power BI mein dynamic, reusable, aur complex calculations karne ke liye zaroori hain. Yeh businesses ko data se valuable insights nikalne aur data-driven decisions lenay mein madad dete hain.
+
+# Types of Measures
+
+As a data analyst, aap apni business ko unke sawaalon ke jawab aur hal dena chahte hain. Measures ke zariye aap apne data se qeemti insights hasil kar sakte hain, strategic decisions le sakte hain, aur business performance ko behtar bana sakte hain. Agle kuch minutes mein, aap Power BI ke mukhtalif types ke measures explore karenge.
+
+AdventureWorks apni annual sales report tayar karne ke liye mukhtalif types ke measures use kar raha hai. Is report ke liye, company ko apni sales data ko mukhtalif regions ke across analyze karna hai aur specific products aur sales team members ke baare mein insights nikalni hain.
+
+## Additivity ka Concept
+
+Additivity se murad hai ke measures ka behavior aggregation ke dauran kaisa hota hai, jaise ke summing ya averaging values across different dimensions. Lekin har measure aise behave nahi karta, is liye inka sahi categorization samajhna zaroori hai accurate analysis aur visualization ke liye.
+
+## Types of Measures
+
+### 1. Additive Measures
+
+- Ye wo measures hain jo kisi bhi business dimension (time, geography, product category) ke across aggregate kiye ja sakte hain.
+- Basic mathematical operations jese addition aur subtraction in measures par apply hote hain.
+- Inka nateeja consistent hota hai chahe aap data ko kisi bhi tareeke se group karen.
+- Additive measures ke liye aksar **SUM()** DAX function use hota hai.
+- **Example:** AdventureWorks ki monthly sales report mein revenue aur quantities sold ko product category aur region ke hisaab se sum kiya jata hai.
+
+### 2. Non-Additive Measures
+
+- Ye measures kisi bhi dimension ke across meaningful aggregate nahi kiye ja sakte.
+- Inmein ratios, averages, percentages jaise calculations shamil hain.
+- Inka aggregate karna misleading ho sakta hai, is liye caution se use karna chahiye.
+- **Example:** AdventureWorks ka average sales per customer non-additive measure hai. January mein average $300 aur February mein $350 hai, lekin in dono ko jodna sahi nahi hoga.
+
+> Correct approach ye hai ke total sales aur total customers ka sum le kar average nikala jaye.
+
+### 3. Semi-Additive Measures
+
+- Ye measures kuch dimensions ke across aggregate kiye ja sakte hain, magar sab ke across nahi.
+- Yeh aksar aise data ke liye use hote hain jo kisi specific waqt ki halat dikhata hai.
+- Semi-additive measures kuch dimensions par SUM use karte hain, aur dusre dimensions par mukhtalif aggregation.
+- **Example:** AdventureWorks ka inventory balance semi-additive measure hai. Inventory ko product category ya store location ke hisaab se add kiya ja sakta hai, lekin time ke across aggregate nahi kiya ja sakta.
+- For example, January ke end mein 50 bicycles aur February ke end mein 60 bicycles hain, lekin in dono ko jod ke 110 nahi kaha ja sakta kyunki stock level change hota rehta hai.
+
+---
+
+## Summary
+
+Aap ab Power BI mein mukhtalif types ke measures ko pehchan sakte hain aur unka sahi istemal kar sakte hain. Har measure apni jagah unique role play karta hai insights generate karne aur decision-making mein madad dene ke liye.
+
+Yaad rakhein, data analysis mein asal value sirf numbers mein nahi, balki unke sahi aur soch samajh ke interpretation mein hoti hai.
+
+# What is Optimization and Why Is It Necessary?
+
+Imagine a data analyst at AdventureWorks, a multinational bike manufacturing company. Your job is to analyze vast amounts of data and turn it into meaningful insights that guide decision makers. They rely on your Power BI dashboards to understand the company’s successes, challenges, and opportunities.
+
+## The Problem
+
+As the data volume grows, reports start slowing down. Simple queries that once took seconds now take minutes or even hours. This slowdown frustrates staff, delays decisions, and reduces the value of data-driven solutions.
+
+## What is Optimization?
+
+In Power BI, **optimization** means modifying, tuning, or streamlining your data models, reports, and dashboards to achieve the best possible performance. The goal is to make sure your reports and dashboards run smoothly and quickly, even as data grows.
+
+When dealing with small datasets, performance may not be an issue. But with large or complex data:
+
+- Reports load slowly  
+- Dashboard interactions become sluggish  
+- You may experience timeouts or errors  
+
+These issues can come from inefficient data models, complex calculations, or inappropriate visuals.
+
+## Why is Optimization Necessary?
+
+By optimizing your Power BI solutions, you can:
+
+- **Enhance speed and efficiency:** Handle huge datasets quickly so teams can access the data they need without delay, boosting productivity  
+- **Enable informed decision-making:** Faster report loading means timely insights, allowing the company to react quickly to changes like drops in sales or new popular products  
+- **Improve user experience:** Quick, smooth loading reports reduce frustration and wasted time, helping teams focus on analysis  
+- **Use resources efficiently:** Optimized models handle growth and bigger data volumes without needing excessive computing power  
+- **Ensure timely report generation:** Regular reports for different teams can be produced and shared on schedule, supporting smooth operations  
+
+## Summary
+
+Optimization is critical for maintaining the value and usability of Power BI reports as data grows. Every second saved, every query that runs faster, and every smoothly loading dashboard helps your organization make better, faster decisions. Keep exploring and applying optimization techniques—your work is key to unlocking the full potential of data.
+
+# Optimization by Example
+
+Imagine it’s your first day at AdventureWorks, a multinational bicycle manufacturer. As a new data analyst, you face the huge challenge of analyzing the constant flow of data from sales in North America, production in Asia, and customer interactions in Europe. This vast, disorganized data is full of insights that can drive strategic decisions and growth—but extracting those insights requires optimization techniques combined with Power BI.
+
+## What is Optimization?
+
+Optimization in Power BI is the process of transforming, cleaning, and organizing datasets to achieve the best possible performance. It involves techniques such as:
+
+- Sorting  
+- Filtering  
+- Indexing  
+- Data transformation  
+
+These techniques make data more manageable and improve efficiency and accuracy in analysis.
+
+## The Scenario: Lucas’s Task
+
+Lucas Pereira, an assistant data analyst at AdventureWorks, needs to analyze bike sales performance across North America. The dataset is huge, containing bike models, sales dates, customer details, and regions. Optimization is vital for Lucas to make sense of this data quickly and effectively.
+
+### Sorting
+
+Lucas starts by sorting the data alphabetically by bike model. This simple step organizes the data, making it easier to read and interpret. Sorting groups similar data together, which speeds up search and analysis, helping Lucas spot trends, patterns, and outliers faster.
+
+### Filtering
+
+Next, Lucas filters the data to focus only on North American sales. Filtering removes irrelevant information from other regions, reducing noise and focusing analysis on the area of interest. This also decreases processing time and computational load, making analysis faster and more precise.
+
+### Indexing
+
+Lucas creates indexes on bike models and regions, allowing him to quickly find data points without scanning the entire dataset. Indexing improves response time for queries and report generation, enabling faster decision-making.
+
+### Data Transformation
+
+Finally, Lucas standardizes sales dates that appear in multiple formats. This data transformation improves consistency, allowing accurate date-based analysis like tracking and forecasting sales patterns. It also prevents errors from inconsistent data formats.
+
+## Conclusion
+
+By applying sorting, filtering, indexing, and data transformation, Lucas turns a massive, disorganized dataset into a powerful tool for insight. Optimization makes data more accessible, manageable, and insightful. As Lucas’s journey shows, optimization is the compass, map, and light that guide data analysts through complex datasets to create meaningful business strategies and success stories. Step up, use these optimization techniques in Power BI, and unlock the true power of your data.
+
+# Identifying and Reducing Cardinality Levels
+
+You’ve just started as a data analyst at AdventureWorks, and your first task is to prepare and analyze data to support marketing initiatives. Soon, you notice that your usually fast Power BI reports are slowing down. The culprit is high cardinality.
+
+## What is Cardinality?
+
+Cardinality in Power BI refers to the number of distinct values in a column. For example, in a **Product Category** column, each unique category counts as a distinct value. A column with many unique values has **high cardinality**.
+
+High cardinality increases your data model size and slows down query processing, much like trying to find a book in an unorganized library without an index.
+
+## Why Does High Cardinality Matter?
+
+Power BI has a powerful engine but working with columns that have extremely high cardinality can slow down reports, increase memory usage, and degrade user experience.
+
+## How to Identify High Cardinality?
+
+Look for columns with many unique values, such as IDs, precise decimal numbers, or timestamps with many distinct entries.
+
+## Strategies to Reduce Cardinality
+
+### 1. Summarization (Grouping)
+
+Instead of analyzing every transaction individually, aggregate data by categories like product category or order date.  
+
+**Example:** Instead of listing every bike sale, group sales by product category to reduce unique values.
+
+**How to do it in Power BI:**
+- Select the column to group by (e.g., Product Category)  
+- Go to the **Transform** tab  
+- Click **Group By**  
+- Choose the aggregation method (sum, count, average, etc.)  
+- Click **OK**  
+
+This reduces the number of distinct rows, improving performance.
+
+### 2. Change Decimal Columns to Fixed Decimals
+
+Highly precise decimal columns (e.g., product weight measured to micrograms) can inflate cardinality.  
+
+**Example:** The **Product Weight** column with microgram precision has many unique values.
+
+**How to reduce:**
+- Select the decimal column  
+- Go to **Transform** tab  
+- Choose **Data Type**  
+- Select **Fixed decimal number**  
+
+This rounds numbers, reducing unique values and lowering cardinality.
+
+## Important Considerations
+
+- Reducing cardinality may reduce data granularity and precision  
+- Always balance performance improvements with the needs of your analysis  
+- The goal is not less or more data, but the **right data**  
+
+Mastering cardinality helps you turn raw data into insightful stories, enabling better decisions and impactful change.
+
+# Resolving Performance Issues in the Data Model
+
+Imagine starting your Monday at AdventureWorks with fresh sales data from multiple stores and customer orders worldwide. You also receive data from various suppliers and manufacturers supporting AdventureWorks’ bicycle production. Your task is to trace a specific component’s journey from the suppliers dataset to the products dataset using Power BI.
+
+## The Problem
+
+As you load the data, reports slow down drastically. Queries that should take seconds now take minutes, and some don’t load at all. You notice performance issues especially around relationships between tables — in particular, many-to-many relationships.
+
+## Understanding Many-to-Many Relationships
+
+- A **relationship** in a data model shows how tables connect.  
+- A **one-to-one** relationship means each record in one table relates to exactly one record in another.  
+- However, real-world data often involves **many-to-many** relationships where:  
+  - One product can be made from components supplied by many suppliers  
+  - One supplier can provide components for many products  
+
+This mutual connection increases model complexity and can cause performance bottlenecks.
+
+## Diagnosing and Fixing Performance Issues
+
+### Step 1: Open Model View
+
+- Click the model view icon in Power BI.  
+- Tables appear as boxes with fields, connected by lines representing relationships.  
+- Locate the relationship between the **Products** and **Suppliers** tables.  
+
+### Step 2: Edit Relationship
+
+- Double-click the line connecting the Products and Suppliers tables to open the **Edit Relationship** dialog.  
+- Find the **Cross Filter Direction** option.  
+
+### Step 3: Adjust Cross Filter Direction
+
+- The default setting might be **Both** — filters flow both ways, increasing complexity.  
+- To improve performance, change it to **Single** (e.g., Suppliers filter Products).  
+- This limits the filtering direction, simplifying calculations and speeding up queries.  
+
+### Step 4: Save Changes
+
+- Click **OK** to apply changes and close the dialog.  
+- The model is now simplified, resolving many-to-many performance issues.  
+
+## Why This Matters
+
+By controlling filter direction and reducing relationship complexity, you improve report responsiveness, reduce query times, and create a smoother user experience — essential when working with large, interconnected datasets.
+
+---
+
+This approach helps balance accuracy and performance, ensuring your Power BI data model runs efficiently without compromising insights.
+
+
+
+
+
+
+
+
+
+
 
 
 
