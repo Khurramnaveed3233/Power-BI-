@@ -693,7 +693,6 @@ Business insights generate karna ka matlab hota hai bohot saare data ko analyze 
 
 - **Definition**: Star schema ka extended form, jisme dimension tables ko aur normalize karke related tables me tod diya jata hai.
 - **Example**: Product table ko supplier aur category tables me todna.
-- 
 - **Advantages**:
   
   - Data storage aur retrieval efficient hota hai
