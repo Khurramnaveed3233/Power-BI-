@@ -851,6 +851,90 @@ Har dimension table ek ya multiple related tables se connected hoti hai, jisse e
 Sahi schema choose karna aapke **analysis ke needs**, **data ki complexity**, aur **relationships** par depend karta hai.  
 Har schema type ke advantages aur limitations samajh kar aap better database design decisions le sakte hain jo efficient aur effective data storage aur management ko ensure karte hain.  
 
+## Adventure Works Analysis Overview
+
+Adventure Works apne **sales, customer, aur product data** ka analysis karna chahta hai taake marketing strategies improve ki ja saken, product offerings enhance ho saken, aur overall customer experience behtar ho sake.
+
+Adventure Works ke paas 3 main datasets hain:  
+1. **Sales** table – Transaction data store karti hai  
+2. **Customer** table – Customer information store karti hai  
+3. **Product** table – Product details store karti hai  
+
+Goal yeh hai ke in tables ka data samjha jaye aur unke **tables aur columns manipulate karke** useful insights generate kiye jayein.
+
+---
+
+## Table Properties in Power BI
+
+Power BI mein **tables** data modeling, analysis, aur visualization ka base element hoti hain.  
+Agar aapko Power BI ka maximum potential use karna hai, to aapko tables ke **different properties** samajhna aur manage karna zaroori hai.
+
+### Key Properties of Tables in Power BI
+- **Name**: Table ka naam jo data model mein identify hota hai  
+- **Description**: Optional detail jo table ke purpose ko explain karti hai  
+- **Data Category**: Column ya table ka context define karta hai, jaise geographic data ya product codes  
+- **Storage Mode**: Import, DirectQuery, ya Dual mode define karta hai ki data Power BI mein kaise store hoga  
+- **Relationships**: Table ka connection dusri tables ke saath define karta hai  
+- **Calculated Columns & Measures**: Data model ke andar naye fields create karne ka feature  
+
+<img width="1471" height="828" alt="22" src="https://github.com/user-attachments/assets/284f6e37-9c70-4bbe-a04c-6d19b317832b" />
+
+## Power BI Table and Column Properties (Adventure Works Example)
+
+### **1. Name**
+- **Definition**: Unique identifier for the table, descriptive and easy to understand. Tables have rows (data records) and columns (attributes).  
+- **Example**: Tables named `Sales`, `Customer`, and `Product`. Columns in `Sales` table: `OrderID`, `CustomerID`, `ProductID`, `Quantity`, `Price`.
+
+### **2. Display Name**
+- **Definition**: User-friendly name shown in Power BI.  
+- **Example**: Display name for Adventure Works table: `AdventureWorksData`.
+
+### **3. Table Description**
+- **Definition**: Additional context about the table’s purpose and content, useful for collaboration.  
+- **Example**: In Orders table, description could be "Orders of sales of the product in the dataset".
+
+### **4. Data Category**
+- **Definition**: Helps Power BI understand column context by categorizing data (e.g., geography, URLs, email).  
+- **Example**: Customer table's email column assigned category **Email**.
+
+### **5. Summarization**
+- **Definition**: Defines default aggregation method for numeric columns (SUM, AVERAGE, MIN, MAX, COUNT).  
+- **Example**: Sales table `Quantity` column set to **SUM** for total products sold.
+
+### **6. Sort by Column**
+- **Definition**: Specifies a default column for sorting.  
+- **Example**: Product table `ProductName` sorted ascending for easier browsing.
+
+### **7. Hide or Show Tables**
+- **Definition**: Option to hide or display tables in data model, useful for intermediate or sensitive data.  
+- **Example**: Hide Customer table columns containing sensitive profit or income data.
+
+### **8. Relationship**
+- **Definition**: Connects tables for cross-table analysis.  
+- **Example**: Link Sales `CustomerID` to Customer `CustomerID` and Sales `ProductID` to Product `ProductID` for analysis like total sales by customer or popular products.
+
+---
+
+## **Column Properties**
+In Power BI, column properties control how column data is displayed, treated, and analyzed. Proper configuration ensures:
+- **Data accuracy**
+- **Better visualization quality**
+- **Improved user experience**
+
+Common column properties include:
+- **Name & Data Type**
+- **Format (currency, date, percentage)**
+- **Sort order**
+- **Default summarization**
+- **Data category**
+- **Visibility (hide/show)**
+
+<img width="1476" height="825" alt="23" src="https://github.com/user-attachments/assets/2a3d3a97-f722-4ccc-b761-ea278ccc342e" />
+
+
+
+---
+
 
 
 
