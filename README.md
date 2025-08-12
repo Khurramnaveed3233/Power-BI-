@@ -522,3 +522,171 @@ Achhi data modeling se reports fast hoti hain, data aggregation easy hota hai (h
 Example: Adventure Works ne apne customers, sales, aur marketing data ko ek model me combine kiya, relationships set kiye aur DAX calculations banayi, jis se pata chala kaunsi campaigns ne sales boost ki.  
 
 Conclusion: Data model foundation hota hai aapke analysis ka. Agar ye structured aur optimized ho, to insights accurate aur reliable milte hain.
+
+**Power BI Model View**  
+Reports ke andar data models banane aur manage karne ke liye use hota hai. Ye tables, relationships aur columns ka visual overview deta hai, jo complex relationships samajhne me help karta hai.  
+
+**Access**: Left sidebar me model icon click karo.  
+
+**Main UI elements**:  
+1. Diagram view (Canvas)  
+2. Data pane  
+3. Properties pane  
+4. Home ribbon  
+
+**Diagram view (Canvas)**:  
+- Data model ka visual map hota hai (tables, fields, relationships)  
+- Data tables raw data ko represent karti hain (imported ya calculated)  
+- Table expand/collapse karke fields dekh sakte ho  
+- Eye icon se table ko report me hide kar sakte ho (model me rahegi aur calculations me use ho sakti hai)  
+
+<img width="1430" height="804" alt="1" src="https://github.com/user-attachments/assets/cb3f8f6a-6b4f-427a-b9a0-92fc6a27f0a5" />
+
+To access more options for a table, click the ellipses (three dots) beside the eye icon, which allows you to rename, delete, or perform other actions on the table.
+
+<img width="1430" height="804" alt="2" src="https://github.com/user-attachments/assets/d8d74654-13c7-4b71-888e-808fdb881caf" />
+
+**Fields**
+
+Fields are columns within your data tables, representing individual data points or attributes.In the Model view, these fields are listed under their respective tables. All calculated columns and measures also appear as fields in the data tables.
+
+<img width="1430" height="804" alt="3" src="https://github.com/user-attachments/assets/7420d559-5c09-4205-8b25-1b79a042d6ed" />
+
+**Relationships**  
+Model View ka ek main feature ye hai ke tables ke beech relationships banaye aur manage kiye ja sakte hain.  
+
+- Power BI aksar automatically relationship detect kar leta hai agar common fields (same naam wale columns) mil jaen  
+- User manually bhi relationship bana ya edit kar sakta hai  
+- Relationship banane ka base common key fields hoti hain (jaise CustomerID in Customers table aur Orders table)  
+
+<img width="1430" height="804" alt="4" src="https://github.com/user-attachments/assets/243d54b9-cb12-4671-af85-a8604626c0aa" />
+
+**Relationships ka Visual**  
+- Tables ke beech ek connector line hoti hai jo relationship dikhati hai  
+- Line par hover karo to wo fields highlight hoti hain jo relationship bana rahi hain  
+- Line par arrow cross-filter direction batata hai (data kis table se kis table me flow kar raha hai)
+  
+<img width="1430" height="804" alt="5" src="https://github.com/user-attachments/assets/cb83c855-773f-47ed-a29b-7424074e9de9" />
+
+The 1 icon represents the “one” side of the relationship, while the * icon indicates the “many” side.
+
+<img width="1430" height="804" alt="6" src="https://github.com/user-attachments/assets/e12e0eac-b36f-48cf-8718-9ee099e52f9c" />
+
+To modify a relationship, double-click the connector line to open the Edit Relationship window, where you can configure or change relationship settings.
+
+<img width="1430" height="804" alt="7" src="https://github.com/user-attachments/assets/9fa465f6-c6e1-4b4c-9155-a90c5a48f887" />
+
+**Data Pane**  
+- Power BI Desktop ke teeno views (Report, Data, Model) me common hota hai  
+- Saare data tables aur unke fields list karta hai (calculated tables, columns, measures included)  
+- Agar bohot zyada tables ho to search bar use karke specific table dhoond sakte ho  
+
+<img width="1430" height="803" alt="8" src="https://github.com/user-attachments/assets/d31e1eda-3fd3-4335-aa3f-dd6056780c6d" />
+
+You can also expand or collapse the data pane by selecting the double arrow.
+
+<img width="1430" height="803" alt="9" src="https://github.com/user-attachments/assets/5596725b-7655-428c-be52-fff49ddb9e1f" />
+
+**Properties Pane**  
+- Tables aur columns ki properties edit aur configure karne ke liye use hota hai  
+- Do sections hote hain:  
+  1. **General**: Table/field rename karna, description add karna, basic settings adjust karna  
+  2. **Advanced**: Detailed configurations jaise column features enable/disable karna  
+
+<img width="1430" height="804" alt="10" src="https://github.com/user-attachments/assets/40655367-ea92-4c89-b8e6-fa3f780b0098" />
+
+**Home Ribbon (Model View)**  
+- Data ko shape aur structure karne ke liye functions provide karta hai  
+- Reports aur visualizations banane se pehle data preparation ke liye use hota hai  
+- Functions group form me arranged hote hain (jaise table manage karna, relationships set karna, fields modify karna)  
+
+<img width="1430" height="804" alt="11" src="https://github.com/user-attachments/assets/3f9fe931-0066-4ac5-b3c1-ea99fd1129bb" />
+
+**Data (Home Ribbon)**  
+- Report view aur Data view ki tarah connectivity options deta hai  
+- New data sources connect karne ya existing ko manage karne ke liye use hota hai  
+
+<img width="1430" height="804" alt="12" src="https://github.com/user-attachments/assets/ca361cd2-bdb1-4909-b344-a860bbec8410" />
+
+**Queries (Home Ribbon)**  
+- **Transform data**: Power Query Editor open karta hai jahan data cleaning aur transformations ki ja sakti hain  
+- **Refresh**: Dataset ko source se latest data ke sath update karta hai  
+
+<img width="1430" height="804" alt="13" src="https://github.com/user-attachments/assets/9bc42b5f-d763-4304-af8a-9acfb0bd1651" />
+
+**Manage Relationships**
+
+This tool allows you to establish new relationships between tables or edit existing ones.
+
+<img width="1430" height="804" alt="14" src="https://github.com/user-attachments/assets/959c5237-0785-447d-8f7e-53daa85c3a33" />
+
+**Calculations (Home Ribbon)**  
+
+- Custom calculations banane ka option deta hai jaise calculated tables, columns aur measures  
+- Ye calculations **DAX (Data Analysis Expressions)** ka use karke banti hain jo analysis capabilities ko enhance karti hain  
+
+<img width="1430" height="804" alt="15" src="https://github.com/user-attachments/assets/95fcd6f9-d25e-4b62-870a-15aa521740bc" />
+
+**Security (Home Ribbon)**  
+- Roles aur rules define karne ka option deta hai taake data access control kiya ja sake  
+- Isse Power BI Desktop me security aur user management improve hota hai  
+
+<img width="1430" height="804" alt="16" src="https://github.com/user-attachments/assets/f9744867-2f2c-40c1-bc23-a52ed2205d94" />
+
+**Q&A**
+
+- A natural language query tool that lets you interact with your data by asking questions in everyday language.
+
+<img width="1430" height="804" alt="17" src="https://github.com/user-attachments/assets/129ebc14-1fa3-493c-b209-024da4cec918" />
+
+**Share (Home Ribbon)**  
+- Reports share karne ka option deta hai taake team members ke sath collaborate kiya ja sake  
+- Isse teamwork aur report sharing process streamline hoti hai  
+
+<img width="1430" height="804" alt="18" src="https://github.com/user-attachments/assets/47000a88-bde5-406f-90ca-b6ba319d3c88" />
+
+**Conclusion**  
+
+- Model view UI aur uske components ka achhi tarah use seekhna data modeling, schema design aur advanced Power BI features ke liye bohot zaroori hai  
+- In tools ko master karne se aap structured aur insightful data models bana sakte ho jo reporting capabilities ko enhance karte hain  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
