@@ -463,3 +463,42 @@ Misal ke taur par, agar aapko apni company ke different departments ke revenue k
 - **Detail view →** Table / Matrix
 - **Target tracking →** Gauge / KPI / Card
 - **Process flow →** Funnel Chart
+
+#  12 Dashboard Design Tips for Better Data Visualization
+
+1. **Purpose samjho** – Pehle yeh samjho ke dashboard kis liye ban raha hai  
+   *Example*: Agar sales dashboard bana rahe ho to decide karo ke yeh management ko monthly targets check karne ke liye hai ya sales team ko daily performance monitor karne ke liye  
+
+2. **Sirf important content rakho** – Har cheez mat dikhayo, sirf woh jo kaam ka ho  
+   *Example*: Agar inventory dashboard hai to sirf fast-moving aur slow-moving products ka data dikhayo, puri product list nahi  
+
+3. **Data ink ratio ka khayal rakho** – Fazool graphics ya decorations hatao jo data samajhne me help nahi karte  
+   *Example*: Bar chart me unnecessary 3D effects use karne ki bajaye simple 2D bars rakho  
+
+4. **Numbers round karo** – Data ko readable banane ke liye round figures use karo  
+   *Example*: Revenue ko 1,254,873 likhne ke bajaye 1.25M likho taake management jaldi samajh sake  
+
+5. **Best visualization choose karo** – Har data ke liye best chart select karo  
+   *Example*: Market share dikhane ke liye pie chart use karo lekin sales trend dikhane ke liye line chart  
+
+6. **Related metrics group karo** – Jo metrics related hain unko ek saath rakho  
+   *Example*: Sales amount, profit margin, aur units sold ko ek hi section me dikhayo  
+
+7. **Consistency rakho** – Same type ke data ke liye same style ka visualization use karo  
+   *Example*: Agar regions ke sales bar chart me dikhate ho to saare regions ke liye bar chart hi use karo, kisi ek ke liye pie chart mat lagao  
+
+8. **Hierarchy dikhayo** – Important metrics ko zyada highlight karo  
+   *Example*: Dashboard ke top par total revenue aur profit rakho, niche category wise breakdown  
+
+9. **Numbers ko context do** – Sirf number na dikhayo, comparison bhi dikhayo  
+   *Example*: Agar profit 2M hai to previous month ke profit ke sath arrow lagao jo increase ya decrease show kare  
+
+10. **Clear labels use karo** – Har metric ka naam clear likho  
+    *Example*: “Total Sales” likho sirf “Sales” nahi, aur time frame bhi add karo jaise “Total Sales (Jan 2025)”  
+
+11. **Logon ke liye banao** – Rules tod sakte ho agar use improve hota ho  
+    *Example*: Agar management ko ek hi page me sab kuch dekhna pasand hai to multiple metrics ek page pe arrange kar do chahe best practice alag ho  
+
+12. **Evolve karte raho** – Dashboard ko feedback ke basis pe update karo  
+    *Example*: Agar sales team ke kehne pe discount ka column add karne se unka kaam easy ho jata hai to woh feature add kar do  
+
