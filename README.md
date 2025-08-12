@@ -650,6 +650,74 @@ This tool allows you to establish new relationships between tables or edit exist
 - Model view UI aur uske components ka achhi tarah use seekhna data modeling, schema design aur advanced Power BI features ke liye bohot zaroori hai  
 - In tools ko master karne se aap structured aur insightful data models bana sakte ho jo reporting capabilities ko enhance karte hain  
 
+#  Introduction to schemas
+
+Business insights generate karna ka matlab hota hai bohot saare data ko analyze karna aur is data ka sahi tarike se store aur structure karna bohot important hota hai. Power BI me aap apne data ko schema ka use karke structure kar sakte hain. Schema data ka ek logical framework hota hai jo batata hai ke data kaise organize aur connect kiya gaya hai.
+
+**Adventure Works** apne inventory ko optimize karna chahta hai aur sales strategy ko improve karke zyada bicycles sell karna chahta hai. Iske liye wo apne customer, product, sales data aur business ke doosre areas ka data analyze karega. Power BI schema use karke wo in data sources ke beech relationships banayega taake required insights generate kiye ja sakein.
+
+## Schema ki Types
+
+### 1. Flat Schema
+
+- **Definition**: Sab attributes aur fields ek hi table me store hote hain.
+  
+- **Advantages**:
+  
+  - Data retrieval easy hoti hai
+  - Analysis simple hota hai
+  - Visualization straightforward hoti hai
+    
+- **Disadvantages**:
+  - Large datasets ke liye inefficient
+  - Data redundancy aur inconsistency
+  - Complex datasets ke liye suitable nahi
+
+### 2. Star Schema
+
+- **Definition**: Ek central fact table hota hai jo multiple dimension tables se connect hota hai, jiska structure star shape ka hota hai.
+- **Example**: Sales transactions fact table connect hoti hai customers, employees, dates, marketing campaigns dimension tables se.
+
+- **Advantages**:
+  
+  - Data redundancy kam hoti hai
+  - Query performance better hota hai
+  - Logical aur clear data model
+    
+- **Disadvantages**:
+- 
+  - Tables add/modify karna mushkil
+  - Complex relationships handle karna limited
+
+### 3. Snowflake Schema
+
+- **Definition**: Star schema ka extended form, jisme dimension tables ko aur normalize karke related tables me tod diya jata hai.
+- **Example**: Product table ko supplier aur category tables me todna.
+- 
+- **Advantages**:
+  
+  - Data storage aur retrieval efficient hota hai
+  - Data integrity aur consistency improve hoti hai
+  - Scalability aur flexibility zyada hoti hai
+
+- **Disadvantages**:
+
+  - Analysis complex ho jata hai
+  - Relationships samajhna aur manage karna mushkil
+  - Queries slow ho sakti hain
+
+## Schema Validation
+
+Schema validate karte waqt:
+
+- Har column ka correct **data type** (text, numeric) assign ho
+- Correct **formatting** applied ho
+- Clear **descriptions** ho relevant context ke saath
+- Table aur column properties correctly configured ho
+
+## Conclusion
+
+Different schema types samajhna aur unke advantages/disadvantages jaan lena data analysts ke liye bohot zaroori hai. Power BI me strong schema design karke aap apne data ki integrity maintain kar sakte hain aur meaningful insights generate kar sakte hain.
 
 
 
