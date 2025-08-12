@@ -750,11 +750,10 @@ Adventure Works ne Power BI ko apne data analytics ke liye adopt kiya hai aur in
 - Achha schema design **query performance**, **data accuracy**, aur **reporting efficiency** improve karta hai  
 - Normalization duplicate data remove karta hai aur consistency maintain karta hai
 
-**Flat schema**
-
-<img width="800" height="450" alt="19" src="https://github.com/user-attachments/assets/0d541bd9-3d6a-4d09-a7a4-d6354285dd00" />
 
 ## Flat Schema Overview
+
+<img width="800" height="450" alt="19" src="https://github.com/user-attachments/assets/0d541bd9-3d6a-4d09-a7a4-d6354285dd00" />
 
 Flat schema ek simple database design hai jahan saara data **ek single table** mein store hota hai.  
 - Har row ek unique record represent karti hai  
