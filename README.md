@@ -718,6 +718,139 @@ Schema validate karte waqt:
 
 Different schema types samajhna aur unke advantages/disadvantages jaan lena data analysts ke liye bohot zaroori hai. Power BI me strong schema design karke aap apne data ki integrity maintain kar sakte hain aur meaningful insights generate kar sakte hain.
 
+## Schema Kya Hai
+
+Power BI mein, schema ek **logical blueprint** hota hai jo tables ki structure, organization aur relationships ko define karta hai.
+
+### Data Analyst Ka Role
+
+- Tables ke darmiyan meaningful aur clear relationships create karna taake querying aur reporting easy ho  
+- Har use case ke liye best schema type select karna  
+- **Normalization** ensure karna taake duplicate data remove ho aur data integrity improve ho, yani bari tables ko chhoti focused tables mein todna aur unhein relationships ke zariye link karna  
+
+---
+
+## Adventure Works Schema Ka Example
+
+Adventure Works ne Power BI ko apne data analytics ke liye adopt kiya hai aur interconnected tables ka schema design kiya hai taake analysis aur visualization effective ho.
+
+### Schema Mein Tables
+
+- **Reseller**: Reseller ID, contact information aur demographic details store karta hai  
+- **Regions**: Customers ka geographic data store karta hai (region, country, city)  
+- **Sales**: Transaction data store karta hai (date, sale amount, transaction ID, quantities sold)  
+- **Products**: Products ke details store karta hai (categories, subcategories, product ID)  
+- **Salesperson**: Salespersons ka data rakhta hai (employee ID, hiring date, designation)  
+
+---
+
+## Key Points
+
+- Schema = Data ka structure aur relationships ka blueprint  
+- Achha schema design **query performance**, **data accuracy**, aur **reporting efficiency** improve karta hai  
+- Normalization duplicate data remove karta hai aur consistency maintain karta hai
+
+**Flat schema**
+
+<img width="800" height="450" alt="19" src="https://github.com/user-attachments/assets/0d541bd9-3d6a-4d09-a7a4-d6354285dd00" />
+
+## Flat Schema Overview
+
+Flat schema ek simple database design hai jahan saara data **ek single table** mein store hota hai.  
+- Har row ek unique record represent karti hai  
+- Har column us record ke attributes represent karta hai  
+
+**Example**: Adventure Works ki Sales table mein  
+- Har row = ek sales transaction  
+- Columns = customer ka naam, product, sale date, etc.  
+- Sirf ek table hone ki wajah se relationships manage karne ki zarurat nahi hoti  
+
+---
+
+## Flat Schema Advantages
+- Simple design, easy samajhna aur maintain karna  
+- Querying straightforward hoti hai (joins ki zarurat nahi)  
+- Jaldi setup aur basic reporting ke liye useful  
+
+---
+
+## Flat Schema Disadvantages
+- **Data redundancy**: Same data bar bar repeat hota hai  
+- Zyada storage consume hota hai  
+- Data inconsistencies ka risk badh jata hai  
+- Large datasets ke liye slow performance  
+- Saare attributes ek table mein hone ki wajah se data clutter hota hai  
+- Meaningful relationships aur hierarchies banani mushkil hoti hai, detailed analysis limited hoti hai  
+
+## Star Schema Overview
+
+<img width="800" height="450" alt="20" src="https://github.com/user-attachments/assets/e93f608f-5d66-4f0c-a416-e9c0c853fba2" />
+
+Star schema ek database design hai jo **data warehousing** aur **dimensional modeling** mein use hota hai.  
+Ismein ek **central fact table** hoti hai jo ek ya multiple **dimension tables** se connect hoti hai, dono mein ek common field ke zariye.  
+
+**Adventure Works Example**:  
+- Fact table: quantitative data store karti hai (sales amount, product quantity)  
+- Dimension tables: descriptive data store karti hain (customer info, product details, dates)  
+
+---
+
+## Star Schema Advantages
+- **Data redundancy kam hoti hai** (facts aur dimensions alag tables mein store hote hain)  
+- Efficient querying aur aggregation possible hoti hai  
+- Dimension tables chhoti hoti hain, indexing se query performance improve hota hai  
+- Design **intuitive aur easy to understand** hota hai  
+- Fact table central hoti hai, baaki tables clear relationships ke saath linked hoti hain  
+
+---
+
+## Star Schema Disadvantages
+- Flexibility kam hoti hai (new dimensions add karna ya modify karna mushkil ho sakta hai)  
+- Complex relationships handle karne ke liye suitable nahi hota  
+- Zyada complex data structures ke liye **Snowflake schema** better hota hai  
+
+## Snowflake Schema Overview
+
+<img width="1482" height="834" alt="21" src="https://github.com/user-attachments/assets/f762dfa0-afdd-4327-8714-db4d286c730e" />
+
+Snowflake schema ek **Star schema ka extended version** hai.  
+Ismein **dimension tables** ko multiple related tables mein split kiya jata hai taake **data redundancy kam ho** aur **data integrity improve ho**.  
+Is process ko **normalization** kehte hain.  
+
+**Adventure Works Example**:  
+
+Har dimension table ek ya multiple related tables se connected hoti hai, jisse ek **hierarchical structure** banta hai jo Snowflake ki tarah lagta hai.  
+
+---
+
+## Snowflake Schema Advantages
+
+- Data redundancy kam hoti hai  
+- Data integrity improve hoti hai normalization ki wajah se  
+- Complex relationships handle karne mein zyada flexibility hoti hai  
+- Naye relationships ke liye naye tables easily add kiye ja sakte hain  
+
+---
+
+## Snowflake Schema Disadvantages
+
+- Star schema se zyada complex hota hai  
+- Samajhne aur maintain karne mein mushkil  
+- Querying slow ho sakti hai kyunki multiple joins required hote hain  
+
+---
+
+## Importance of Choosing the Right Schema
+
+- **Flat Schema**: Simple aur easy to use, lekin large datasets aur complex relationships ke liye suitable nahi  
+- **Star Schema**: Popular choice for dimensional modeling, data redundancy kam, intuitive design, lekin complex relationships ke liye kam flexible  
+- **Snowflake Schema**: Greater flexibility aur better data integrity, lekin complexity ki wajah se samajhna aur query karna mushkil  
+
+---
+
+## Conclusion
+Sahi schema choose karna aapke **analysis ke needs**, **data ki complexity**, aur **relationships** par depend karta hai.  
+Har schema type ke advantages aur limitations samajh kar aap better database design decisions le sakte hain jo efficient aur effective data storage aur management ko ensure karte hain.  
 
 
 
