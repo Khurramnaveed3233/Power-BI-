@@ -1415,13 +1415,9 @@ Jo kuch axis/dimensions par add ho sakti hai, lekin **Time** ya kisi specific di
 
 Time par **LAST VALUE** ya **AVERAGE** lena, SUM nahi.
 
-#  Semi-Additive Measures (Layman Language)
-
 ##  Simple Definition
 > *Aisa number jo ek hi din ya ek hi time pe add ho sakta hai,  
 lekin alag-alag din ka total seedha add nahi karte.*
-
----
 
 ##  Example: Ghar ka Saman (Stock)
 Socho tumhare paas:
@@ -1434,6 +1430,7 @@ Agar tum dono din ka stock:
 10 + 12 = 22 kilo
 
 kar doge, to yeh **galat** ❌ hoga.  
+
 Kyun? Kyunki tumhare ghar me ek din ka saman doosre din ka saman ke saath physically add nahi hota — bas replace/update hota hai.
 
 ---
@@ -1446,7 +1443,6 @@ Kyun? Kyunki tumhare ghar me ek din ka saman doosre din ka saman ke saath physic
 
 ##  Easy Line to Remember
 **"Semi-Additive = Jagah ke hisaab se add ho sakta hai, time ke hisaab se nahi."**
-
 
 ---
 
