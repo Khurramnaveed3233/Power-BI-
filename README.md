@@ -85,8 +85,6 @@ Better hota pehle test group se feedback lete.
 
 Power BI men duplication handle karne ke liye 2 concepts use hote hain, **DISTINCT** aur **UNIQUE**.  
 
----
-
 ##  Example Dataset (Sales Table)
 
 | CustomerID | Product   |
@@ -106,7 +104,7 @@ Power BI men duplication handle karne ke liye 2 concepts use hote hain, **DISTIN
 - Har value ek dafa hi show hoti hai  
 
 **Query:**  
-```DAX
+
 EVALUATE DISTINCT ( Sales[CustomerID] )
 
 **Result:**
