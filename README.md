@@ -105,7 +105,6 @@ Power BI men duplication handle karne ke liye 2 concepts use hote hain: **DISTIN
 
 **Query:**  
 
-```DAX
 EVALUATE DISTINCT ( Sales[CustomerID] )
 
 **Result:**
@@ -116,7 +115,6 @@ EVALUATE DISTINCT ( Sales[CustomerID] )
 | C2         |
 | C3         |
 | C4         |
-
 
 ---
 
