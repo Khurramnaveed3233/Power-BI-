@@ -87,6 +87,17 @@ Power BI men duplication handle karne ke liye 2 concepts use hote hain: **DISTIN
 
 ---
 
+##  Example Dataset (Sales Table)
+
+| CustomerID | Product   |
+|------------|-----------|
+| C1         | Laptop    |
+| C2         | Mobile    |
+| C1         | Tablet    |
+| C3         | Laptop    |
+| C3         | Mobile    |
+| C4         | Headphone |
+
 ## DISTINCT
 
 - Duplicate values remove karta hai  
@@ -94,15 +105,18 @@ Power BI men duplication handle karne ke liye 2 concepts use hote hain: **DISTIN
 
 **Query:**  
 
+```DAX
 EVALUATE DISTINCT ( Sales[CustomerID] )
 
 **Result:**
 
-CustomerID
-C1
-C2
-C3
-C4
+| CustomerID |
+|------------|
+| C1         |
+| C2         |
+| C3         |
+| C4         |
+
 
 ---
 
