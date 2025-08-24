@@ -141,6 +141,8 @@ FILTER (
 - DISTINCT → Duplicate remove karta hai aur har value ek martaba show karta hai
 - UNIQUE → Sirf un values ko return karta hai jo table me ek hi martaba exist karti hain
 
+<img width="758" height="207" alt="cc" src="https://github.com/user-attachments/assets/43e5bd8c-7aa4-4c2d-831a-31c1243c2305" />
+
 ---
 
 # Power BI Visuals – Purpose, Real-World Examples & When to Use
