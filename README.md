@@ -121,11 +121,7 @@ EVALUATE DISTINCT ( Sales[CustomerID] )
 - Sirf un values ko return karta hai jo table me sirf ek hi dafa exist karti hain
 - Agar value 1 se zyada martaba aaye to wo unique nahi hoti
 
-Unique_Customers =
-FILTER (
-    DISTINCT ( Sales[CustomerID] ),
-    CALCULATE ( COUNTROWS ( Sales ), ALLEXCEPT ( Sales, Sales[CustomerID] ) ) = 1
-)
+<img width="662" height="135" alt="uu" src="https://github.com/user-attachments/assets/85d30e5c-ccf3-4d5d-8dcc-6de13a7319e2" />
 
 **Result:**
 
