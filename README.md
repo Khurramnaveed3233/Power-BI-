@@ -79,6 +79,73 @@ Better hota pehle test group se feedback lete.
 -  Pehle plan karo  
 -  Data sahi ho  
 -  Test run karo  
+--- 
+
+#  Power BI: UNIQUE vs DISTINCT
+
+Power BI men duplication handle karne ke liye 2 concepts use hote hain, **DISTINCT** aur **UNIQUE**.  
+
+---
+
+##  Example Dataset (Sales Table)
+
+| CustomerID | Product   |
+|------------|-----------|
+| C1         | Laptop    |
+| C2         | Mobile    |
+| C1         | Tablet    |
+| C3         | Laptop    |
+| C3         | Mobile    |
+| C4         | Headphone |
+
+---
+
+## DISTINCT
+
+- Duplicate values remove karta hai  
+- Har value ek dafa hi show hoti hai  
+
+**Query:**  
+```DAX
+EVALUATE DISTINCT ( Sales[CustomerID] )
+
+**Result:**
+
+CustomerID
+C1
+C2
+C3
+C4
+
+- Chahe C1 aur C3 multiple times aaye hain, DISTINCT unko sirf ek dafa return karega
+
+##  UNIQUE
+
+- Sirf un values ko return karta hai jo table me sirf ek hi dafa exist karti hain
+- Agar value 1 se zyada martaba aaye to wo unique nahi hoti
+
+**Query (Unique Customers):**
+
+Unique_Customers =
+FILTER (
+    DISTINCT ( Sales[CustomerID] ),
+    CALCULATE ( COUNTROWS ( Sales ), ALLEXCEPT ( Sales, Sales[CustomerID] ) ) = 1
+)
+
+**Result:**
+
+CustomerID
+C2
+C4
+
+- Sirf C2 aur C4 ek hi dafa aaye hain isliye wo hi unique hain
+
+## Summary
+
+- DISTINCT → Duplicate remove karta hai aur har value ek martaba show karta hai
+- UNIQUE → Sirf un values ko return karta hai jo table me ek hi martaba exist karti hain
+
+---
 
 # Power BI Visuals – Purpose, Real-World Examples & When to Use
 
