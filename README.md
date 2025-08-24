@@ -116,6 +116,31 @@ EVALUATE DISTINCT ( Sales[CustomerID] )
 | C3         |
 | C4         |
 
+## UNIQUE
+
+- Sirf un values ko return karta hai jo table me sirf ek hi dafa exist karti hain
+- Agar value 1 se zyada martaba aaye to wo unique nahi hoti
+
+Unique_Customers =
+FILTER (
+    DISTINCT ( Sales[CustomerID] ),
+    CALCULATE ( COUNTROWS ( Sales ), ALLEXCEPT ( Sales, Sales[CustomerID] ) ) = 1
+)
+
+**Result:**
+
+| CustomerID |
+| ---------- |
+| C2         |
+| C4         |
+
+- Sirf C2 aur C4 ek hi dafa aaye hain isliye wo hi unique hain
+
+**Summary**
+
+- DISTINCT → Duplicate remove karta hai aur har value ek martaba show karta hai
+- UNIQUE → Sirf un values ko return karta hai jo table me ek hi martaba exist karti hain
+
 ---
 
 # Power BI Visuals – Purpose, Real-World Examples & When to Use
