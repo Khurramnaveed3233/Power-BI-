@@ -141,15 +141,15 @@ EVALUATE DISTINCT ( Sales[CustomerID] )
 
 ---
 
-# 📘 Understanding VAR in Power BI (DAX)
+# Understanding VAR in Power BI (DAX)
 
-## 🔹 What is VAR?
+##  What is VAR?
 `VAR` in DAX (Power BI) allows you to create a **temporary variable** where you can store a value or calculation.  
 After that, you use `RETURN` to decide what should be the **final output**.
 
 ---
 
-## 🔹 Why Use VAR?
+## Why Use VAR?
 
 1. **Readability (Easy to Understand):**  
    Instead of writing the same calculation again and again, assign it to a variable and use it later.
@@ -164,7 +164,6 @@ After that, you use `RETURN` to decide what should be the **final output**.
 
 ## Example 1: Simple Addition
 
-```DAX
 VAR a = 10
 VAR b = 5
 RETURN
@@ -172,6 +171,8 @@ a + b
 
 **Result:** 15
 (Here, a = 10 and b = 5, so return = 10 + 5)
+
+--- 
 
 ## Example 2: Current Month Sales
 
@@ -183,6 +184,8 @@ TOTALMTD(
 )
 
 - selected_month holds the month chosen by the user, which is reused in the calculation.
+
+---
 
 ## Scenario 1: With & Without VAR
 
@@ -211,6 +214,8 @@ CALCULATE(
 - Faster calculation
 - Cleaner code
 
+--- 
+
 ## Scenario 2: Profit Calculation
 
 ❌ Without VAR
@@ -238,6 +243,8 @@ SUMX(
 - Cleaner code
 - Only one place to update formulas
 - Faster execution
+
+--- 
 
 **Summary**
 
