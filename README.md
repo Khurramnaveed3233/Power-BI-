@@ -227,13 +227,17 @@ Profit = Sale amount * quantity
 
 <img width="645" height="154" alt="P1" src="https://github.com/user-attachments/assets/ce644be0-2a0b-4e7a-91e1-ecf7ecdf35b6" />
 
+- Yahan par Sales[Quantity] * … bar-bar likhna pad raha hai → code lamba ho gaya.
+
 **With VAR**
 
 <img width="656" height="211" alt="P2" src="https://github.com/user-attachments/assets/747ffe41-57d0-4d32-90e9-09b20b2d951c" />
 
-- Cleaner code
-- Only one place to update formulas
-- Faster execution
+*Ab kya hua?*
+
+- SalesAmount ek dafa store kar liya.
+- SalesCost ek dafa store kar liya.
+- Return me simple subtraction.
 
 --- 
 
