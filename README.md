@@ -189,30 +189,33 @@ TOTALMTD(
 
 ## Scenario 1: With & Without VAR
 
+- Aapke paas ek sales table hai jisme Date aur Sales Amount hai.
+- Ab aapko Current Month ki Total Sales nikalni hai.
+
+*Agar VAR ka use na karo:*
+
 **Without VAR**
 
-Current Month Sales =
-CALCULATE(
-    SUM(Sales[Amount]),
-    MONTH(Sales[Date]) = MONTH(TODAY())
-)
+<img width="640" height="154" alt="p3" src="https://github.com/user-attachments/assets/bbe9d115-9b65-4548-b433-ed3505ee4259" />
 
-- Repeats MONTH(TODAY()) multiple times.
-- Harder to maintain.
+- Yahan hum directly likh rahe hain ke "Date ka month aaj ke month ke barabar ho".
+
+*Problem:* =  Agar aapko month number aur bhi jagah use karna pade to bar-bar likhna parega.
+
+*Ab VAR ke saath:*
 
 **With VAR**
 
-Current Month Sales =
-VAR CurrentMonth = MONTH(TODAY())
-RETURN
-CALCULATE(
-    SUM(Sales[Amount]),
-    MONTH(Sales[Date]) = CurrentMonth
-)
+<img width="747" height="190" alt="4" src="https://github.com/user-attachments/assets/955d4084-819b-445d-b545-4a759b5ce8d9" />
 
 - Easier to read (CurrentMonth is clear)
 - Faster calculation
 - Cleaner code
+
+*Ab simple ho gaya:*
+
+- CurrentMonth variable me ek dafa store kar liya.
+- Neeche calculation me usko bar-bar likhne ki zarurat nahi.
 
 --- 
 
@@ -239,6 +242,16 @@ Profit = Sale amount * quantity
 - SalesCost ek dafa store kar liya.
 - Return me simple subtraction.
 
+*Fayda:*
+
+- Code chhota aur readable ho gaya.
+- Agar formula badalna ho to sirf VAR me change karna hoga.
+- Calculation fast hogi kyunki bar-bar multiply karne ki zarurat nahi.
+
+*Simple lafzon me:*
+
+- VAR hum tab use karte hain jab ek hi expression bar-bar aana ho. Ek dafa usko variable me store kar lo → code short, fast aur clean ho jata hai.
+  
 --- 
 
 **Summary**
