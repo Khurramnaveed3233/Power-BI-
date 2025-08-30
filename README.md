@@ -181,6 +181,8 @@ a + b
 - Yahan selected_month ek variable hai jo user ne kaunsa month select kiya usko hold karta hai.
 - Phir aap usko neeche CALCULATE ke andar use kar rahe ho.
 
+*Summary:*
+
 - *VAR* = Temporary container jisme aap ek value ya expression store karte ho.
 - *RETURN* = Batata hai ke akhir me output me kya dikhana hai.
 
