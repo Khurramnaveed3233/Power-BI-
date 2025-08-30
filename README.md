@@ -141,6 +141,122 @@ EVALUATE DISTINCT ( Sales[CustomerID] )
 
 ---
 
+# 📘 Understanding VAR in Power BI (DAX)
+
+## 🔹 What is VAR?
+`VAR` in DAX (Power BI) allows you to create a **temporary variable** where you can store a value or calculation.  
+After that, you use `RETURN` to decide what should be the **final output**.
+
+---
+
+## 🔹 Why Use VAR?
+
+1. **Readability (Easy to Understand):**  
+   Instead of writing the same calculation again and again, assign it to a variable and use it later.
+
+2. **Performance (Faster Execution):**  
+   A repeated calculation slows things down. With `VAR`, you calculate once and reuse it.
+
+3. **Clean Code (Simple & Maintainable):**  
+   The code becomes shorter, more structured, and easier to update.
+
+---
+
+## Example 1: Simple Addition
+
+```DAX
+VAR a = 10
+VAR b = 5
+RETURN
+a + b
+
+**Result:** 15
+(Here, a = 10 and b = 5, so return = 10 + 5)
+
+## Example 2: Current Month Sales
+
+VAR selected_month = SELECTEDVALUE('Date Table'[Month Number])
+RETURN
+TOTALMTD(
+    CALCULATE([Total Sales], 'Date Table'[Month Number] = selected_month),
+    'Date Table'[Date]
+)
+
+- selected_month holds the month chosen by the user, which is reused in the calculation.
+
+## Scenario 1: With & Without VAR
+
+❌ Without VAR
+
+Current Month Sales =
+CALCULATE(
+    SUM(Sales[Amount]),
+    MONTH(Sales[Date]) = MONTH(TODAY())
+)
+
+- Repeats MONTH(TODAY()) multiple times.
+- Harder to maintain.
+
+With VAR
+
+Current Month Sales =
+VAR CurrentMonth = MONTH(TODAY())
+RETURN
+CALCULATE(
+    SUM(Sales[Amount]),
+    MONTH(Sales[Date]) = CurrentMonth
+)
+
+- Easier to read (CurrentMonth is clear)
+- Faster calculation
+- Cleaner code
+
+## Scenario 2: Profit Calculation
+
+❌ Without VAR
+
+Total Profit =
+SUMX(
+    Sales,
+    ( Sales[Quantity] * Sales[Price] ) - ( Sales[Quantity] * Sales[Cost] )
+)
+
+- Sales[Quantity] * … repeated multiple times.
+- Code looks messy.
+
+**With VAR**
+
+Total Profit =
+SUMX(
+    Sales,
+    VAR SalesAmount = Sales[Quantity] * Sales[Price]
+    VAR SalesCost   = Sales[Quantity] * Sales[Cost]
+    RETURN
+    SalesAmount - SalesCost
+)
+
+- Cleaner code
+- Only one place to update formulas
+- Faster execution
+
+**Summary**
+
+- **VAR** = Temporary container for storing values or expressions.
+- **RETURN** = Defines the final output.
+
+**When to use VAR?**
+
+- When you need to reuse a calculation multiple times.
+- When you want cleaner and easier-to-read code.
+
+**When you want faster performance.**
+
+**In simple words:**
+
+- Use VAR in Power BI when you want to calculate something once and reuse it multiple times — making your DAX code short, fast, and clean.
+
+---
+
 # Power BI Visuals – Purpose, Real-World Examples & When to Use
 
 ## 1. **Bar Chart / Column Chart**
