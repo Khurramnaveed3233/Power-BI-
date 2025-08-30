@@ -176,14 +176,13 @@ a + b
 
 ## Example 2: Current Month Sales
 
-VAR selected_month = SELECTEDVALUE('Date Table'[Month Number])
-RETURN
-TOTALMTD(
-    CALCULATE([Total Sales], 'Date Table'[Month Number] = selected_month),
-    'Date Table'[Date]
-)
+<img width="715" height="182" alt="5" src="https://github.com/user-attachments/assets/ad3c7406-226a-47d8-904a-643955a24c80" />
 
-- selected_month holds the month chosen by the user, which is reused in the calculation.
+- Yahan selected_month ek variable hai jo user ne kaunsa month select kiya usko hold karta hai.
+- Phir aap usko neeche CALCULATE ke andar use kar rahe ho.
+
+- *VAR* = Temporary container jisme aap ek value ya expression store karte ho.
+- *RETURN* = Batata hai ke akhir me output me kya dikhana hai.
 
 ---
 
