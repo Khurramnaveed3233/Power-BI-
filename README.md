@@ -220,25 +220,12 @@ CALCULATE(
 
 **Without VAR**
 
-Total Profit =
-SUMX(
-    Sales,
-    ( Sales[Quantity] * Sales[Price] ) - ( Sales[Quantity] * Sales[Cost] )
-)
+img width="645" height="154" alt="P1" src="https://github.com/user-attachments/assets/c3e923e1-4f66-45f0-8cfb-874e8ca86570" />
 
-- Sales[Quantity] * … repeated multiple times.
-- Code looks messy.
 
 **With VAR**
 
-Total Profit =
-SUMX(
-    Sales,
-    VAR SalesAmount = Sales[Quantity] * Sales[Price]
-    VAR SalesCost   = Sales[Quantity] * Sales[Cost]
-    RETURN
-    SalesAmount - SalesCost
-)
+<img width="656" height="211" alt="P2" src="https://github.com/user-attachments/assets/747ffe41-57d0-4d32-90e9-09b20b2d951c" />
 
 - Cleaner code
 - Only one place to update formulas
