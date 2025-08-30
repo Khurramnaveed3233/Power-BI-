@@ -218,10 +218,14 @@ CALCULATE(
 
 ## Scenario 2: Profit Calculation
 
+- Aapke paas ek Sales table hai jisme Product, Quantity aur Price hai.
+- Ab aapko ek measure banana hai jo Total Profit calculate kare, jahan:
+
+Profit = Sale amount * quantity 
+
 **Without VAR**
 
-img width="645" height="154" alt="P1" src="https://github.com/user-attachments/assets/c3e923e1-4f66-45f0-8cfb-874e8ca86570" />
-
+<img width="645" height="154" alt="P1" src="https://github.com/user-attachments/assets/ce644be0-2a0b-4e7a-91e1-ecf7ecdf35b6" />
 
 **With VAR**
 
