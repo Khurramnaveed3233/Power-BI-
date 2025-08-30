@@ -189,7 +189,7 @@ TOTALMTD(
 
 ## Scenario 1: With & Without VAR
 
-❌ Without VAR
+**Without VAR**
 
 Current Month Sales =
 CALCULATE(
@@ -200,7 +200,7 @@ CALCULATE(
 - Repeats MONTH(TODAY()) multiple times.
 - Harder to maintain.
 
-With VAR
+**With VAR**
 
 Current Month Sales =
 VAR CurrentMonth = MONTH(TODAY())
@@ -218,7 +218,7 @@ CALCULATE(
 
 ## Scenario 2: Profit Calculation
 
-❌ Without VAR
+**Without VAR**
 
 Total Profit =
 SUMX(
